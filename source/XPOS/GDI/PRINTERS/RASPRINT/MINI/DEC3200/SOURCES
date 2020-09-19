@@ -1,0 +1,14 @@
+MAJORCOMP=windows
+MINORCOMP=md_DEC3200
+
+TARGETNAME=DEC3200
+TARGETPATH=$(BASEDIR)\neptune\sdk\lib
+TARGETTYPE=DYNLINK
+TARGETLIBS=$(BASEDIR)\neptune\sdk\lib\*\user32.lib
+
+INCLUDES=..;..\..\inc
+
+PRIVINCS=
+
+SOURCES=DEC3200.rc \
+	code.c

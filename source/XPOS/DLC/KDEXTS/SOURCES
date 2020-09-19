@@ -1,0 +1,22 @@
+!IFNDEF BASEDIR
+BASEDIR=\nt
+!ENDIF
+
+MAJORCOMP=xpos
+MINORCOMP=dlc
+
+TARGETNAME=dlcx
+TARGETPATH=$(BASEDIR)\neptune\sdk\lib
+TARGETTYPE=DYNLINK
+TARGETLIBS=$(BASEDIR)\neptune\sdk\lib\*\crtdll.lib \
+           $(BASEDIR)\neptune\sdk\lib\*\kernel32.lib
+
+DLLBASE=@\xp\neptune\sdk\lib\coffbase.txt,psxdll
+
+INCLUDES=..;..\..\inc;..\..\..\inc
+
+SOURCES=dlcx.c
+
+NTCPPFLAGS=-DDLC_AND_LLC=1 -DDLC_UNILOCK
+#NTCPPFLAGS=-DDLC_AND_LLC=1 -DDLC_UNILOCK -DLOCK_CHECK
+#NTCPPFLAGS=-DDLC_AND_LLC=1 -DDLC_UNILOCK -DLOCK_CHECK -DDEBUG_DISCOVERY

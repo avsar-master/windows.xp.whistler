@@ -1,0 +1,8 @@
+MAJORCOMP=utils
+MINORCOMP=diskreg
+
+TARGETNAME=diskreg
+TARGETPATH=\xp\neptune\sdk\lib
+TARGETTYPE=LIBRARY
+
+SOURCES=diskreg.c

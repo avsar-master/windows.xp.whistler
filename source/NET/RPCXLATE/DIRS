@@ -1,0 +1,29 @@
+!IF 0
+
+Copyright (c) 2000-91  Microsoft Corporation
+
+Module Name:
+
+    dirs.
+
+Abstract:
+
+    This file specifies the subdirectories of the current directory that
+    contain component makefiles.
+
+
+Author:
+
+    John Rogers (JohnRo) 26-Mar-2000
+
+NOTE:   Commented description of this file is in \xp\neptune\oak\bin\dirs.tpl
+
+!ENDIF
+
+# RxCommon should be first, as others depend on it:
+DIRS= \
+        RxCommon \
+        RxApi
+
+OPTIONAL_DIRS= \
+        RxTest

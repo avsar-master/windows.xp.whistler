@@ -1,0 +1,45 @@
+!IF 0
+
+Copyright (c) 2000  Microsoft Corporation
+
+Module Name:
+
+    sources.
+
+Abstract:
+
+    This file specifies the target component being built and the list of
+    sources files needed to build that component.  Also specifies optional
+    compiler switches and libraries that are unique for the component being
+    built.
+
+
+Author:
+
+    Steve Wood (stevewo) 12-Apr-1990
+
+NOTE:   Commented description of this file is in \xp\bak\bin\sources.tpl
+
+!ENDIF
+
+MAJORCOMP=xpos
+MINORCOMP=nwrdr
+
+TARGETNAME=testnw
+TARGETPATH=obj
+TARGETTYPE=library
+
+UMTYPE=console
+UMAPPL=testnw*attach*encrypt*lock2*userncp*lock3*fileio*lock4*getmsg*tex*open
+UMLIBS=
+UNICODE=1
+XPDEBUGTYPE=both
+XPDEBUG=ntsd
+386_OPTIMIZATION=/Od
+
+INCLUDES=..\inc;$(_XPROOT)\neptune\xpos\inc;$(_XPROOT)\neptune\inc;..\rdr
+
+SOURCES=
+
+USE_CL860_LARGE_MODEL=1
+

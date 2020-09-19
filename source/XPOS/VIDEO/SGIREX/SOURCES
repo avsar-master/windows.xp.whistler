@@ -1,0 +1,12 @@
+MAJORCOMP=xpos
+MINORCOMP=video
+
+TARGETNAME=sgirex
+TARGETPATH=\xp\neptune\sdk\lib
+TARGETTYPE=MINIPORT
+
+TARGETLIBS=\xp\neptune\sdk\lib\*\videoprt.lib
+
+INCLUDES=..\..\inc
+
+SOURCES=

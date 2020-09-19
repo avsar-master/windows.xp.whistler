@@ -1,0 +1,24 @@
+MAJORCOMP=tools
+MINORCOMP=intltools
+
+TARGETNAME=rledit
+TARGETPATH=obj
+TARGETTYPE=LIBRARY
+
+USE_CRTDLL=1
+
+INCLUDES=.;..\common
+C_DEFINES=-DRLWIN32 -DRLRES32 -DUNICODE -D_UNICODE
+GPSIZE=0
+XPDEBUG=ntsd
+XPDEBUGTYPE=windbg
+386_OPTIMIZATION=/Od
+
+SOURCES=\
+	rledit.rc
+
+UMAPPL=rledit
+UMLIBS=..\common\obj\*\common.lib \xp\neptune\sdk\lib\*\shell32.lib \xp\neptune\sdk\lib\*\comdlg32.lib \xp\neptune\sdk\lib\*\version.lib
+UMTYPE=windows
+UMENTRY=winmain
+UMRES=obj\*\rledit.res

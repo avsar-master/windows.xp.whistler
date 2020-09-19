@@ -1,0 +1,65 @@
+!IF 0
+
+Copyright (c) 2000  Microsoft Corporation
+
+Module Name:
+
+    sources.
+
+Abstract:
+
+    This file specifies the target component being built and the list of
+    sources files needed to build AFP server.  Also specifies optional
+    compiler switches and libraries that are unique for the component being
+    built.
+
+
+Author:
+
+    Narendra Gidwani (nareng) 12-Aug-2000
+
+!ENDIF
+
+MAJORCOMP=SFM
+MINORCOMP=SfmSvc
+
+TARGETNAME=SfmSvc
+TARGETPATH=OBJ
+TARGETTYPE=PROGRAM
+
+TARGETLIBS= $(BASEDIR)\neptune\sdk\lib\*\rpcutil.lib   \
+	    $(BASEDIR)\neptune\sdk\lib\*\rpcrt4.lib    \
+	    $(BASEDIR)\neptune\sdk\lib\*\samlib.lib    \
+	    $(BASEDIR)\neptune\sdk\lib\*\netapi32.lib  \
+            $(BASEDIR)\neptune\sdk\lib\*\user32.lib    \
+            $(BASEDIR)\neptune\sdk\lib\*\ntdll.lib
+
+INCLUDES=..;..\..\h;$(BASEDIR)\neptune\inc
+
+SOURCES= \
+	 sfmsvc.rc  \
+ 	 debug.c    \
+	 srvrhlpr.c \
+	 errorlog.c \
+	 main.c     \
+	 security.c \
+    	 buffer.c   \
+	 afpsvc_s.c \
+	 init.c     \
+	 ioctl.c    \
+	 validate.c \
+	 registry.c \
+	 volume.c   \
+ 	 util.c     \
+	 server.c   \
+	 dir.c      \
+	 session.c  \
+	 file.c     \
+	 etcmap.c   \
+	 stats.c    \
+	 message.c  \
+	 finder.c   \
+	 conn.c
+
+C_DEFINES=-DUNICODE -DRPC_NO_WINDOWS 
+UMTYPE=console

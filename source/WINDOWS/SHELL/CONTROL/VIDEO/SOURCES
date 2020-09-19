@@ -1,0 +1,43 @@
+!IF 0
+
+Copyright (c) 2000  Microsoft Corporation
+
+
+!ENDIF
+
+BLDCRT=1
+
+MAJORCOMP=shell
+MINORCOMP=control
+
+USE_CRTDLL=1
+
+TARGETNAME=display
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+TARGETEXT=cpl
+DLLENTRY=DllInitialize
+
+INCLUDES=..\..\inc;..\h;..\..\..\inc;..\..\userpri;..\..\..\prsinf
+
+C_DEFINES=-DWIN32 -DW3 -DUNICODE -D_UNICODE
+
+NTTARGETFILE0=dspmsg.h
+
+SOURCES=init.c      \
+        drawbmp.c   \
+        display.cpp \
+        display.rc
+
+TARGETLIBS=$(BASEDIR)\neptune\sdk\lib\*\user32p.lib  \
+           $(BASEDIR)\neptune\sdk\lib\*\kernel32.lib \
+           $(BASEDIR)\neptune\sdk\lib\*\gdi32.lib    \
+           $(BASEDIR)\neptune\sdk\lib\*\comdlg32.lib \
+           $(BASEDIR)\neptune\sdk\lib\*\advapi32.lib \
+           $(BASEDIR)\neptune\sdk\lib\*\version.lib  \
+           $(BASEDIR)\neptune\sdk\lib\*\ntdll.lib    \
+           ..\..\..\prsinf\obj\*\prsinf.lib         \
+           ..\..\userpri\lib\*\userpri.lib
+
+
+UMTYPE=windows

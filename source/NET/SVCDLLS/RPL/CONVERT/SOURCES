@@ -1,0 +1,48 @@
+MAJORCOMP=net
+MINORCOMP=rplcnv
+
+TARGETPATH=obj
+TARGETNAME=rplcnv
+TARGETTYPE=PROGRAM
+NTTARGETFILE0=nlstxt.h msg00001.bin
+
+TARGETLIBS= \
+        ..\lib\obj\*\rpllib.lib \
+        $(BASEDIR)\neptune\sdk\lib\*\netlib.lib      \
+        $(BASEDIR)\neptune\sdk\lib\*\kernel32.lib    \
+        $(BASEDIR)\neptune\sdk\lib\*\advapi32.lib    \
+        $(BASEDIR)\neptune\sdk\lib\*\user32.lib      \
+        $(BASEDIR)\neptune\sdk\lib\*\gdi32.lib       \
+        $(BASEDIR)\neptune\sdk\lib\*\comdlg32.lib    \
+        $(BASEDIR)\neptune\sdk\lib\*\samlib.lib      \
+        $(BASEDIR)\neptune\sdk\lib\*\crtdll.lib      \
+        $(BASEDIR)\neptune\sdk\lib\*\netapi32.lib    \
+        $(BASEDIR)\neptune\sdk\lib\*\wsock32.lib     \
+        $(BASEDIR)\neptune\sdk\lib\*\shell32.lib     \
+        $(BASEDIR)\neptune\sdk\lib\*\jet.lib         \
+        $(BASEDIR)\neptune\sdk\lib\*\ntdll.lib
+
+!IFNDEF DISABLE_NET_UNICODE
+UNICODE=1
+NET_C_DEFINES=-DUNICODE
+!ENDIF
+
+INCLUDES=.;..\inc;..\..\..\inc;..\..\..\api;..\..\..\..\inc;
+WARNING_LEVEL=-W4
+
+SOURCES= \
+        rplmain.c \
+        vendor.c \
+        adapter.c \
+        boot.c \
+        config.c \
+        profile.c \
+        wksta.c \
+        library.c \
+        debug.c \
+        convert.rc
+
+
+C_DEFINES= -DINCL_32= -DNT -DRPC_NO_WINDOWS_H -DWIN32 -DRPL_RPLCNV
+
+UMTYPE=console

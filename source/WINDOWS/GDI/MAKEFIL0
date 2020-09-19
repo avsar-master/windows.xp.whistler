@@ -1,0 +1,47 @@
+#
+# If BUILDMSG is not defined, the define it as the empty string to make
+# the conditionals easier to write.
+#
+
+!INCLUDE $(NTMAKEENV)\makefile.plt
+
+PUBLICINCS=
+
+PRIVATEINCS= \xp\neptune\windows\gdi\gre\hmgr.h          \
+             \xp\neptune\windows\gdi\gre\patblt.hxx      \
+             \xp\neptune\windows\gdi\gre\xformobj.hxx    \
+             \xp\neptune\windows\gdi\gre\engine.hxx      \
+             \xp\neptune\windows\gdi\gre\epointfl.hxx    \
+             \xp\neptune\windows\gdi\math\$(TARGET_DIRECTORY)\efloat.hxx
+
+
+clean: cleansrc all
+
+TARGETINCS= \xp\neptune\windows\gdi\inc\gdi$(TARGET_DIRECTORY).$(ASM_INCLUDE_SUFFIX)
+
+all: $(TARGETINCS)
+!IF "$(BUILDMSG)" != ""
+    echo $(BUILDMSG)
+!ENDIF
+
+cleansrc:
+    -erase $(TARGETINCS)
+
+\xp\neptune\windows\gdi\inc\gdi$(TARGET_DIRECTORY).$(ASM_INCLUDE_SUFFIX): gre\$(TARGET_DIRECTORY)\gen$(TARGET_DIRECTORY).cxx  \
+                                         $(PUBLICINCS)         \
+                                         $(PRIVATEINCS)
+    cd gre
+    nmake obj\$(TARGET_DIRECTORY)\gen$(TARGET_DIRECTORY).obj USE_CRTDLL=1
+    -link32 -out:obj\$(TARGET_DIRECTORY)\gen$(TARGET_DIRECTORY).exe @<<
+-machine:$(TARGET_DIRECTORY)
+-base:@\xp\PUBLIC\SDK\LIB\coffbase.txt,usermode
+-subsystem:console
+-entry:mainCRTStartup
+obj\$(TARGET_DIRECTORY)\gen$(TARGET_DIRECTORY).obj
+\xp\neptune\sdk\lib\$(TARGET_DIRECTORY)\crtdll.lib
+\xp\neptune\sdk\lib\$(TARGET_DIRECTORY)\ntdll.lib
+<<
+    -obj\$(TARGET_DIRECTORY)\gen$(TARGET_DIRECTORY).exe $@
+    -erase obj\$(TARGET_DIRECTORY)\gen$(TARGET_DIRECTORY).obj
+    -erase obj\$(TARGET_DIRECTORY)\gen$(TARGET_DIRECTORY).exe
+    cd ..

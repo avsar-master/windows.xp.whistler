@@ -1,0 +1,13 @@
+MAJORCOMP=windows
+MINORCOMP=md_toshiba
+
+TARGETNAME=toshiba
+TARGETPATH=$(BASEDIR)\neptune\sdk\lib
+TARGETTYPE=DYNLINK
+
+INCLUDES=..;..\..\inc
+
+PRIVINCS=
+
+SOURCES=code.c \
+        toshiba.rc

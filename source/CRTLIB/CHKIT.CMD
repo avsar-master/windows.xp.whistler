@@ -1,0 +1,9 @@
+@if EXIST \xp\neptune\crt32nt\build.err type \xp\neptune\crt32nt\build.err
+@if EXIST \xp\neptune\crt32st\build.err type \xp\neptune\crt32st\build.err
+@if EXIST \xp\neptune\crt32\build.err type \xp\neptune\crt32\build.err
+@if EXIST \xp\neptune\crt32dll\build.err type \xp\neptune\crt32dll\build.err
+@if EXIST \xp\neptune\crt32psx\build.err type \xp\neptune\crt32psx\build.err
+@if EXIST \xp\neptune\fp32nt\build.err type \xp\neptune\fp32nt\build.err
+@if EXIST \xp\neptune\fp32st\build.err type \xp\neptune\fp32st\build.err
+@if EXIST \xp\neptune\fp32\build.err type \xp\neptune\fp32\build.err
+@if EXIST \xp\neptune\fp32dll\build.err type \xp\neptune\fp32dll\build.err

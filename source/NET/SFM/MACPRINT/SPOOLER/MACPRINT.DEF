@@ -1,0 +1,8 @@
+NAME MacPrint
+
+
+DESCRIPTION 'Windows NT Services for Macixposh Print Server'
+
+EXPORTS
+    FamilyEnumCallback
+    FontEnumCallback

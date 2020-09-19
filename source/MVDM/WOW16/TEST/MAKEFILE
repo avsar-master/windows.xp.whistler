@@ -1,0 +1,18 @@
+# WOW16 TEST makefile
+#
+# Copyright (c) 2000, Microsoft Corporation
+#
+# History:
+#   28-Mar-2000 Jeff Parsons (jeffpar)
+#   Created.
+#
+
+all:
+    cd shell
+    $(MAKE)
+    cd ..
+
+clean:
+    cd shell
+    $(MAKE) clean
+    cd ..

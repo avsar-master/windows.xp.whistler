@@ -1,0 +1,13 @@
+# MVDM\bin86 makefile
+#
+# Copyright (c) 2000, Microsoft Corporation
+#
+# History:
+#   08-Jun-2000 Craig Jones (v-cjones)
+#   Created.
+#
+
+all:
+    binplace backup.exe
+
+clean:

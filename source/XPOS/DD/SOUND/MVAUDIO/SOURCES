@@ -1,0 +1,49 @@
+!IF 0
+
+Copyright (c) 1993  Media Vision Inc.
+
+Module Name:
+
+    sources.
+
+Abstract:
+
+    This files builds the MVI MVAUDIO.SYS kernel driver
+
+Author:
+
+    Evan Aurand
+    02-19-93
+
+NOTE:   Commented description of this file is in \xp\bak\bin\sources.tpl
+
+
+MAJORCOMP=xpos
+MINORCOMP=dd
+
+!ENDIF
+
+TARGETNAME=MVAUDIO
+TARGETPATH=obj
+TARGETTYPE=DRIVER
+
+TARGETLIBS=..\soundlib\obj\*\soundlib.lib
+
+INCLUDES=..\soundlib\inc;$(BASEDIR)\neptune\inc;$(BASEDIR)\neptune\xpos\inc
+
+SOURCES=\
+        pas.c      \
+        mvmix.c    \
+        isr.c      \
+        devcaps.c  \
+        init.c     \
+        config.c   \
+        hardware.c \
+        mixer.c    \
+        controls.c \
+        mix_objs.c \
+        mvaudio.rc
+
+
+NTTEST=
+OPTIONAL_NTTEST=

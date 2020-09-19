@@ -1,0 +1,14 @@
+MAJORCOMP=utils
+MINORCOMP=srmep
+
+TARGETNAME=srmep
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+TARGETLIBS=\xp\neptune\sdk\lib\*\exthdr.lib \xp\neptune\sdk\lib\*\kernel32.lib \xp\neptune\sdk\lib\*\user32.lib \xp\neptune\sdk\lib\*\netapi32.lib \xp\neptune\sdk\lib\*\svcctrl.lib
+
+INCLUDES=..\inc;\xp\neptune\sdktools\ztools\inc
+
+SOURCES= srmep.c
+
+C_DEFINES=-D_OS2_20_=0	-DNO_EXT_KEYS -DNOLANMAN -DNT
+UMTYPE=console

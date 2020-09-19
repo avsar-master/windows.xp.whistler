@@ -1,0 +1,12 @@
+MAJORCOMP=xpos
+MINORCOMP=video
+
+TARGETNAME=wdvga
+TARGETPATH=$(BASEDIR)\neptune\sdk\lib
+TARGETTYPE=MINIPORT
+
+TARGETLIBS=$(BASEDIR)\neptune\sdk\lib\*\videoprt.lib
+
+INCLUDES=..\..\inc
+
+SOURCES=

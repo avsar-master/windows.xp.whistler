@@ -1,0 +1,1 @@
+Microsoft Windows XP Professional Service Pack 3 cannot be applied to Windows Fundamentals for Legacy PCs (WinFLP). A unique SP3 update package for WinFLP will be made available at download.microsoft.com.

@@ -1,0 +1,62 @@
+ntnaptbl.c: \xp\neptune\xpos\ke\services.tab
+    gensrv -d i386 -e asm -P \xp\neptune\xpos\ke
+
+ntnapdef.h: \xp\neptune\xpos\ke\services.tab
+    gensrv -d i386 -e asm -P \xp\neptune\xpos\ke
+
+i386\ntnap.inc: \xp\neptune\xpos\ke\services.tab
+    gensrv -d i386 -e asm -P \xp\neptune\xpos\ke
+
+obj\i386\usrstubs.obj: i386\usrstubs.asm ntdll.def
+
+obj\i386\napstubs.obj: i386\napstubs.asm ntdll.def
+
+obj\mips\usrstubs.obj: mips\usrstubs.s ntdll.def
+
+obj\ppc\usrstubs.obj: ppc\usrstubs.s ntdll.def
+
+ntdll.xtr: \xp\neptune\xpos\ke\services.tab
+    gensrv -f ntdll.xtr \xp\neptune\xpos\ke
+
+i386\usrstubs.asm: \xp\neptune\xpos\ke\services.tab
+    gensrv -d i386 -e asm \xp\neptune\xpos\ke
+
+i386\napstubs.asm: \xp\neptune\xpos\ke\services.tab
+    gensrv -d i386 -e asm -P \xp\neptune\xpos\ke
+
+mips\usrstubs.s: \xp\neptune\xpos\ke\services.tab
+    gensrv -d mips -e s -B \xp\neptune\xpos\ke
+
+ppc\usrstubs.s: \xp\neptune\xpos\ke\services.tab
+    gensrv -d ppc -e s -B \xp\neptune\xpos\ke
+
+!IF $(MIPS)
+getntdlldef:
+    copy obj\mips\ntdll.def ntdll.def
+
+ntdll.def: obj\mips\ntdll.def
+
+!ENDIF
+
+!IF $(386)
+getntdlldef:
+    copy obj\i386\ntdll.def ntdll.def
+
+ntdll.def: obj\i386\ntdll.def
+
+!ENDIF
+
+obj\i386\ntdll.def: ntdlldef.src ntnapdef.src ntdll.xtr
+    copy ntdlldef.src+ntnapdef.src+ntdll.xtr  ntdll.pp
+    cl386 /EP -Di386 ntdll.pp > obj\i386\ntdll.def
+    -del ntdll.pp
+
+obj\mips\ntdll.def: ntdlldef.src ntnapdef.src ntdll.xtr
+    copy ntdlldef.src+ntnapdef.src+ntdll.xtr  ntdll.pp
+    rcpp -P -f ntdll.pp -DMIPS=1 -g obj\mips\ntdll.def
+    -del ntdll.pp
+
+obj\ppc\ntdll.def: ntdlldef.src ntnapdef.src ntdll.xtr
+    copy ntdlldef.src+ntnapdef.src+ntdll.xtr ntdll.pp
+    rcpp -P -f ntdll.pp -DPPC=1 -g obj\ppc\ntdll.def
+    -del ntdll.pp

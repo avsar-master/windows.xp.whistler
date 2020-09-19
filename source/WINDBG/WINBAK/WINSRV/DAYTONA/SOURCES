@@ -1,0 +1,59 @@
+MAJORCOMP=windows
+MINORCOMP=winsrv
+
+TARGETNAME=winsrv
+TARGETPATH=$(BASEDIR)\neptune\sdk\lib
+
+TARGETTYPE=DYNLINK
+
+#
+# Put OpenGL libraries last so that they will not be paged in until needed
+# If you do not want to link in the OpenGL libraries, set DISABLE_OPENGL=1
+# in your environment.
+#
+
+LINKLIBS= \
+           $(BASEDIR)\neptune\sdk\lib\*\usersrvl.lib    \
+           $(BASEDIR)\neptune\sdk\lib\*\user32p.lib     \
+           $(BASEDIR)\neptune\sdk\lib\*\gdisrvl.lib     \
+           $(BASEDIR)\neptune\sdk\lib\*\consrvl.lib     \
+           $(BASEDIR)\neptune\sdk\lib\*\basesrv.lib     \
+           $(BASEDIR)\neptune\sdk\lib\*\kernel32.lib    \
+           $(BASEDIR)\neptune\sdk\lib\*\winspool.lib    \
+           $(BASEDIR)\neptune\sdk\lib\*\csrsrv.lib      \
+           $(BASEDIR)\neptune\sdk\lib\*\fscaler.lib     \
+           $(BASEDIR)\neptune\sdk\lib\*\ttfd.lib        \
+           $(BASEDIR)\neptune\sdk\lib\*\bmfd.lib        \
+           $(BASEDIR)\neptune\sdk\lib\*\vtfd.lib        \
+           $(BASEDIR)\neptune\sdk\lib\*\advapi32.lib    \
+           $(BASEDIR)\neptune\sdk\lib\*\efloat.lib      \
+!IFDEF ENABLE_OPENGL
+           $(BASEDIR)\neptune\sdk\lib\*\halftone.lib    \
+           $(BASEDIR)\neptune\sdk\lib\*\gldlist.lib     \
+           $(BASEDIR)\neptune\sdk\lib\*\glgen.lib       \
+           $(BASEDIR)\neptune\sdk\lib\*\glpixel.lib     \
+           $(BASEDIR)\neptune\sdk\lib\*\glsoft.lib      \
+           $(BASEDIR)\neptune\sdk\lib\*\glwgl.lib
+!ELSE
+           $(BASEDIR)\neptune\sdk\lib\*\halftone.lib
+!ENDIF
+
+INCLUDES=..\..\user\server;..\..\user\inc;..\..\inc;..\..\wincon\server
+
+NTLEGO=1
+NTPROFILEINPUT=yes
+
+#
+# Setup for application developer to set breakpoints with windbg
+#
+
+!IFNDEF XPDEBUGTYPE
+XPDEBUGTYPE=coff
+!ENDIF
+
+!IFNDEF ENABLE_OPENGL
+C_DEFINES=-DOPENGL_STUBS=1
+!ENDIF
+
+SOURCES= ..\glstubs.c  \
+         winsrv.rc

@@ -1,0 +1,30 @@
+/**********************************************************************/
+/**			  Microsoft Windows/NT			     **/
+/**		   Copyright(c) Microsoft Corp., 2000		     **/
+/**********************************************************************/
+
+/*
+    xnever.rc
+    Resource script for my application
+
+    FILE HISTORY:
+	beng	    14-Feb-2000 Added a dialog
+	beng	    14-Mar-2000 Added BLT support
+	beng	    20-Jun-2000 Copied from appfoo
+	beng	    14-Oct-2000 Hacked from xqt
+	beng	    22-Oct-2000 BLT unit tests broken into tree
+*/
+
+#include <windows.h>
+#include <blt.rc>
+#include "xnever.h"
+
+XneverIcon ICON "../appfoo.ico"
+
+XneverMenu MENU
+BEGIN
+  POPUP        "&Help"
+    BEGIN
+      MENUITEM "&About this test...",  IDM_ABOUT
+    END
+END

@@ -1,0 +1,27 @@
+!IF 0
+
+Copyright (c) 2000  Microsoft Corporation
+
+Module Name:
+
+    dirs.
+
+Abstract:
+
+    This file specifies the subdirectories of the current directory that
+    contain component makefiles.
+
+
+Author:
+
+    Reza Baghai (RezaB) 23-June-2000
+
+NOTE:
+
+!ENDIF
+
+DIRS= capsrc   \
+      dumpsrc  \
+      capsetup \
+      penter
+

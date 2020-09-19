@@ -1,0 +1,33 @@
+#
+#   Create an installation and configuration DLL for the soundblaster
+#
+
+MAJORCOMP=windows
+MINORCOMP=sndblst
+
+TARGETNAME=sndblst
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+UMTYPE=windows
+
+# Define libs we need and where to find them
+
+TARGETLIBS=$(BASEDIR)\neptune\sdk\lib\*\user32.lib   \
+           $(BASEDIR)\neptune\sdk\lib\*\kernel32.lib \
+           $(BASEDIR)\neptune\sdk\lib\*\advapi32.lib \
+           $(BASEDIR)\neptune\sdk\lib\*\winmm.lib
+
+INCLUDES=..\inc;$(BASEDIR)\neptune\inc
+
+C_DEFINES=-DUNICODE
+
+SOURCES=initc.c     \
+        drvproc.c   \
+        config.c    \
+        registry.c  \
+        sndblst.rc
+
+
+DLLENTRY=DllEntryPoint
+
+DLLBASE=0x6BC00000

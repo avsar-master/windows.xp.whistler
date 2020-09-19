@@ -1,0 +1,32 @@
+# for WINDBG
+# XPDEBUG=ntsd
+# XPDEBUGTYPE=windbg
+# 386_OPTIMIZATION=/Od
+NTCPPFLAGS=-DDEBUG
+
+MAJORCOMP=automate
+MINORCOMP=nttest
+
+TARGETNAME=testvw32
+TARGETPATH=..\lib
+TARGETTYPE=DYNLINK
+TARGETLIBS=$(BASEDIR)\neptune\sdk\lib\*\advapi32.lib \
+	   $(BASEDIR)\neptune\sdk\lib\*\kernel32.lib \
+	   $(BASEDIR)\neptune\sdk\lib\*\user32.lib \
+	   $(BASEDIR)\neptune\sdk\lib\*\gdi32.lib	\
+	   obj\*\testview.res
+
+
+DLLBASE=0x1c000000
+DLLENTRY=LibEntry
+
+C_DEFINES=-DWIN32 -DNT
+
+INCLUDES=..\inc
+
+SOURCES=testview.c    \
+	testview.rc
+
+UMTYPE=windows
+UMTEST=
+UMLIBS=

@@ -1,0 +1,27 @@
+MAJORCOMP=rhino
+MINORCOMP=testdrvr
+
+TARGETNAME=TESTDRVR
+TARGETPATH=obj
+TARGETTYPE=LIBRARY
+
+INCLUDES=$(VCNTBASE)\include;..\classes
+
+SOURCES=testdrvr.cpp\
+	testdrvr.rc\
+
+UMLIBS=..\classes\obj\*\common.lib		 \
+       $(BASEDIR)\neptune\sdk\lib\*\mfcpch.lib	 \
+       $(BASEDIR)\neptune\sdk\lib\*\mfc200.lib	 \
+       $(BASEDIR)\neptune\sdk\lib\*\wsock32.lib   \
+       $(BASEDIR)\neptune\sdk\lib\*\comdlg32.lib  \
+       $(BASEDIR)\neptune\sdk\lib\*\shell32.lib   \
+       $(BASEDIR)\neptune\sdk\lib\*\user32.lib    \
+       $(BASEDIR)\neptune\sdk\lib\*\kernel32.lib  \
+       $(BASEDIR)\neptune\sdk\lib\*\advapi32.lib  \
+       $(BASEDIR)\neptune\sdk\lib\*\gdi32.lib	 \
+       obj\*\testdrvr.res
+
+UMTYPE=windows
+UMENTRY=winmain
+UMAPPL=testdrvr

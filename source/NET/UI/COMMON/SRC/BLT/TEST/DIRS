@@ -1,0 +1,56 @@
+!IF 0
+
+Copyright (c) 2000  Microsoft Corporation
+
+Module Name:
+
+    dirs.
+
+Abstract:
+
+    This file specifies the subdirectories of the current directory that
+    contain component makefiles.
+
+
+Author:
+
+    Steve Wood (stevewo) 17-Apr-1990
+
+
+Revision History:
+
+    Ben Goetter (beng) 16-Oct-2000
+        Created from ...\net\ui\common\src\misc.
+    Ben Goetter (beng) 22-Oct-2000
+        Templated from above
+    Ben Goetter (beng) 01-Nov-2000
+        Added "xvalid" test
+    beng 31-Mar-2000
+        added "xdlgabrt" test
+    beng 18-May-2000
+        added "xlogon" test
+    beng 28-May-2000
+        added "xsetctrl" test
+    beng 16-Aug-2000
+        added "xspin"
+
+!ENDIF
+
+
+DIRS=xapp      \
+     xcdbut    \
+     xcustobj  \
+     xdlgabrt  \
+     xdmap     \
+     xfont     \
+     xlazy     \
+     xlbapp    \
+     xlogon    \
+     xmgroup   \
+     xnever    \
+     xpopup    \
+     xqt       \
+     xsetctrl  \
+     xspin     \
+     xstatbtn  \
+     xvalid

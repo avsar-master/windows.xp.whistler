@@ -1,0 +1,22 @@
+
+MAJORCOMP=opengl
+MINORCOMP=tools
+
+TARGETNAME=printpfd
+TARGETPATH=.\obj
+
+TARGETTYPE=PROGRAM
+
+INCLUDES=$(BASEDIR)\neptune\windows\gdi\opengl\inc
+
+UMTYPE=console
+UMTEST=printpfd*floattst*capimips
+UMAPPL=printpfd*floattst*capimips*win8map
+
+C_DEFINES=-DNDEBUG -DNT -D__STDC__ -DHEADER_FILE
+
+SOURCES=
+
+UMLIBS=\
+       $(_NTBINDIR)\neptune\sdk\lib\*\gdi32.lib       \
+       $(_NTBINDIR)\neptune\sdk\lib\*\user32.lib  

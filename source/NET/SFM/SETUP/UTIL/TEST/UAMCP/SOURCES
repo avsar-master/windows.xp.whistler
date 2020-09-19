@@ -1,0 +1,24 @@
+MAJORCOMP=
+MINORCOMP=
+
+XPDEBUG=ntsd
+TARGETNAME=uamcp
+TARGETPATH=obj
+TARGETTYPE=LIBRARY
+UI=\NETUI
+
+
+INCLUDES=$(BASEDIR)\neptune\sdk\inc; \
+         ..\..\..\..\common\inc;..\inc
+
+UMLIBS=..\..\..\bins\obj\*\sfmutil.lib
+
+
+SOURCES=
+
+
+#C_DEFINES=
+386_FLAGS= /DUNICODE
+
+UMTYPE=console
+UMAPPL=uamcp

@@ -1,0 +1,145 @@
+# 
+# Built automatically 
+# 
+ 
+# 
+# Source files 
+# 
+ 
+$(OBJDIR)\$(NAME).obj $(OBJDIR)\$(NAME).lst: .\$(NAME).cxx \
+	$(COMMON)\ih\dbgpoint.hxx $(COMMON)\ih\debnot.h $(COMMON)\ih\winnot.h \
+	$(CRTINC)\ctype.h $(CRTINC)\excpt.h $(CRTINC)\memory.h \
+	$(CRTINC)\stdarg.h $(CRTINC)\stdio.h $(CRTINC)\stdlib.h \
+	$(CRTINC)\string.h $(CRTINC)\time.h $(OLE)\docfile\tests\tutils.hxx \
+	$(OLE)\h\dfdeb.hxx $(OLE)\h\dfmem.hxx $(OLE)\h\dfmsp.hxx \
+	$(OLE)\h\dfname.hxx $(OLE)\h\ref.hxx $(OLE)\h\wchar.h .\pch.cxx \
+	.\tsupp.hxx d:\xp\neptune\sdk\inc\cderr.h \
+	d:\xp\neptune\sdk\inc\cobjerr.h d:\xp\neptune\sdk\inc\coguid.h \
+	d:\xp\neptune\sdk\inc\commdlg.h d:\xp\neptune\sdk\inc\compobj.h \
+	d:\xp\neptune\sdk\inc\dde.h d:\xp\neptune\sdk\inc\ddeml.h \
+	d:\xp\neptune\sdk\inc\dlgs.h d:\xp\neptune\sdk\inc\drivinit.h \
+	d:\xp\neptune\sdk\inc\dvobj.h d:\xp\neptune\sdk\inc\initguid.h \
+	d:\xp\neptune\sdk\inc\lzexpand.h d:\xp\neptune\sdk\inc\mmsystem.h \
+	d:\xp\neptune\sdk\inc\moniker.h d:\xp\neptune\sdk\inc\nb30.h \
+	d:\xp\neptune\sdk\inc\ole.h d:\xp\neptune\sdk\inc\ole2.h \
+	d:\xp\neptune\sdk\inc\oleguid.h d:\xp\neptune\sdk\inc\rpc.h \
+	d:\xp\neptune\sdk\inc\rpcdce.h d:\xp\neptune\sdk\inc\rpcdce2.h \
+	d:\xp\neptune\sdk\inc\rpcdcep.h d:\xp\neptune\sdk\inc\rpcferr.h \
+	d:\xp\neptune\sdk\inc\rpcnsi.h d:\xp\neptune\sdk\inc\rpcnterr.h \
+	d:\xp\neptune\sdk\inc\scode.h d:\xp\neptune\sdk\inc\shellapi.h \
+	d:\xp\neptune\sdk\inc\storage.h d:\xp\neptune\sdk\inc\valid.h \
+	d:\xp\neptune\sdk\inc\winbase.h d:\xp\neptune\sdk\inc\wincon.h \
+	d:\xp\neptune\sdk\inc\windef.h d:\xp\neptune\sdk\inc\windows.h \
+	d:\xp\neptune\sdk\inc\winerror.h d:\xp\neptune\sdk\inc\wingdi.h \
+	d:\xp\neptune\sdk\inc\winnetwk.h d:\xp\neptune\sdk\inc\winnls.h \
+	d:\xp\neptune\sdk\inc\winnt.h d:\xp\neptune\sdk\inc\winperf.h \
+	d:\xp\neptune\sdk\inc\winreg.h d:\xp\neptune\sdk\inc\winsock.h \
+	d:\xp\neptune\sdk\inc\winspool.h d:\xp\neptune\sdk\inc\winsvc.h \
+	d:\xp\neptune\sdk\inc\winuser.h d:\xp\neptune\sdk\inc\winver.h
+
+$(OBJDIR)\tutils.obj $(OBJDIR)\tutils.lst: .\tutils.cxx \
+	$(COMMON)\ih\dbgpoint.hxx $(COMMON)\ih\debnot.h $(COMMON)\ih\winnot.h \
+	$(CRTINC)\ctype.h $(CRTINC)\excpt.h $(CRTINC)\memory.h \
+	$(CRTINC)\stdarg.h $(CRTINC)\stdio.h $(CRTINC)\stdlib.h \
+	$(CRTINC)\string.h $(CRTINC)\time.h $(OLE)\docfile\tests\tutils.hxx \
+	$(OLE)\h\dfdeb.hxx $(OLE)\h\dfmem.hxx $(OLE)\h\dfmsp.hxx \
+	$(OLE)\h\dfname.hxx $(OLE)\h\ref.hxx $(OLE)\h\wchar.h .\pch.cxx \
+	.\tsupp.hxx d:\xp\neptune\sdk\inc\cderr.h \
+	d:\xp\neptune\sdk\inc\cobjerr.h d:\xp\neptune\sdk\inc\coguid.h \
+	d:\xp\neptune\sdk\inc\commdlg.h d:\xp\neptune\sdk\inc\compobj.h \
+	d:\xp\neptune\sdk\inc\dde.h d:\xp\neptune\sdk\inc\ddeml.h \
+	d:\xp\neptune\sdk\inc\dlgs.h d:\xp\neptune\sdk\inc\drivinit.h \
+	d:\xp\neptune\sdk\inc\dvobj.h d:\xp\neptune\sdk\inc\initguid.h \
+	d:\xp\neptune\sdk\inc\lzexpand.h d:\xp\neptune\sdk\inc\mmsystem.h \
+	d:\xp\neptune\sdk\inc\moniker.h d:\xp\neptune\sdk\inc\nb30.h \
+	d:\xp\neptune\sdk\inc\ole.h d:\xp\neptune\sdk\inc\ole2.h \
+	d:\xp\neptune\sdk\inc\oleguid.h d:\xp\neptune\sdk\inc\rpc.h \
+	d:\xp\neptune\sdk\inc\rpcdce.h d:\xp\neptune\sdk\inc\rpcdce2.h \
+	d:\xp\neptune\sdk\inc\rpcdcep.h d:\xp\neptune\sdk\inc\rpcferr.h \
+	d:\xp\neptune\sdk\inc\rpcnsi.h d:\xp\neptune\sdk\inc\rpcnterr.h \
+	d:\xp\neptune\sdk\inc\scode.h d:\xp\neptune\sdk\inc\shellapi.h \
+	d:\xp\neptune\sdk\inc\storage.h d:\xp\neptune\sdk\inc\valid.h \
+	d:\xp\neptune\sdk\inc\winbase.h d:\xp\neptune\sdk\inc\wincon.h \
+	d:\xp\neptune\sdk\inc\windef.h d:\xp\neptune\sdk\inc\windows.h \
+	d:\xp\neptune\sdk\inc\winerror.h d:\xp\neptune\sdk\inc\wingdi.h \
+	d:\xp\neptune\sdk\inc\winnetwk.h d:\xp\neptune\sdk\inc\winnls.h \
+	d:\xp\neptune\sdk\inc\winnt.h d:\xp\neptune\sdk\inc\winperf.h \
+	d:\xp\neptune\sdk\inc\winreg.h d:\xp\neptune\sdk\inc\winsock.h \
+	d:\xp\neptune\sdk\inc\winspool.h d:\xp\neptune\sdk\inc\winsvc.h \
+	d:\xp\neptune\sdk\inc\winuser.h d:\xp\neptune\sdk\inc\winver.h
+
+$(OBJDIR)\tsupp.obj $(OBJDIR)\tsupp.lst: .\tsupp.cxx \
+	$(COMMON)\ih\dbgpoint.hxx $(COMMON)\ih\debnot.h $(COMMON)\ih\winnot.h \
+	$(CRTINC)\stdlib.h $(CRTINC)\ctype.h $(CRTINC)\excpt.h \
+	$(CRTINC)\memory.h $(CRTINC)\stdarg.h $(CRTINC)\stdio.h \
+	$(CRTINC)\stdlib.h $(CRTINC)\string.h $(CRTINC)\time.h \
+	$(OLE)\docfile\tests\tutils.hxx $(OLE)\h\dfdeb.hxx $(OLE)\h\dfmem.hxx \
+	$(OLE)\h\dfmsp.hxx $(OLE)\h\dfname.hxx $(OLE)\h\ref.hxx \
+	$(OLE)\h\wchar.h .\pch.cxx .\tsupp.hxx d:\xp\neptune\sdk\inc\cderr.h \
+	d:\xp\neptune\sdk\inc\cobjerr.h d:\xp\neptune\sdk\inc\coguid.h \
+	d:\xp\neptune\sdk\inc\commdlg.h d:\xp\neptune\sdk\inc\compobj.h \
+	d:\xp\neptune\sdk\inc\dde.h d:\xp\neptune\sdk\inc\ddeml.h \
+	d:\xp\neptune\sdk\inc\dlgs.h d:\xp\neptune\sdk\inc\drivinit.h \
+	d:\xp\neptune\sdk\inc\dvobj.h d:\xp\neptune\sdk\inc\initguid.h \
+	d:\xp\neptune\sdk\inc\lzexpand.h d:\xp\neptune\sdk\inc\mmsystem.h \
+	d:\xp\neptune\sdk\inc\moniker.h d:\xp\neptune\sdk\inc\nb30.h \
+	d:\xp\neptune\sdk\inc\ole.h d:\xp\neptune\sdk\inc\ole2.h \
+	d:\xp\neptune\sdk\inc\oleguid.h d:\xp\neptune\sdk\inc\rpc.h \
+	d:\xp\neptune\sdk\inc\rpcdce.h d:\xp\neptune\sdk\inc\rpcdce2.h \
+	d:\xp\neptune\sdk\inc\rpcdcep.h d:\xp\neptune\sdk\inc\rpcferr.h \
+	d:\xp\neptune\sdk\inc\rpcnsi.h d:\xp\neptune\sdk\inc\rpcnterr.h \
+	d:\xp\neptune\sdk\inc\scode.h d:\xp\neptune\sdk\inc\shellapi.h \
+	d:\xp\neptune\sdk\inc\storage.h d:\xp\neptune\sdk\inc\valid.h \
+	d:\xp\neptune\sdk\inc\winbase.h d:\xp\neptune\sdk\inc\wincon.h \
+	d:\xp\neptune\sdk\inc\windef.h d:\xp\neptune\sdk\inc\windows.h \
+	d:\xp\neptune\sdk\inc\winerror.h d:\xp\neptune\sdk\inc\wingdi.h \
+	d:\xp\neptune\sdk\inc\winnetwk.h d:\xp\neptune\sdk\inc\winnls.h \
+	d:\xp\neptune\sdk\inc\winnt.h d:\xp\neptune\sdk\inc\winperf.h \
+	d:\xp\neptune\sdk\inc\winreg.h d:\xp\neptune\sdk\inc\winsock.h \
+	d:\xp\neptune\sdk\inc\winspool.h d:\xp\neptune\sdk\inc\winsvc.h \
+	d:\xp\neptune\sdk\inc\winuser.h d:\xp\neptune\sdk\inc\winver.h
+
+# 
+# Precompiled C++ header 
+# 
+
+!ifdef PXXFILE  
+$(PCHDIR)\$(OBJDIR)\pch.pxh $(PCHDIR)\$(OBJDIR)\pch.lst: \
+	$(OLE)\docfile\tests\pch.cxx $(COMMON)\ih\dbgpoint.hxx \
+	$(COMMON)\ih\debnot.h $(COMMON)\ih\winnot.h $(CRTINC)\ctype.h \
+	$(CRTINC)\excpt.h $(CRTINC)\memory.h $(CRTINC)\stdarg.h \
+	$(CRTINC)\stdio.h $(CRTINC)\stdlib.h $(CRTINC)\string.h \
+	$(CRTINC)\time.h $(OLE)\docfile\tests\tsupp.hxx \
+	$(OLE)\docfile\tests\tutils.hxx $(OLE)\h\dfdeb.hxx $(OLE)\h\dfmem.hxx \
+	$(OLE)\h\dfmsp.hxx $(OLE)\h\dfname.hxx $(OLE)\h\ref.hxx \
+	$(OLE)\h\wchar.h d:\xp\neptune\sdk\inc\cderr.h \
+	d:\xp\neptune\sdk\inc\cobjerr.h d:\xp\neptune\sdk\inc\coguid.h \
+	d:\xp\neptune\sdk\inc\commdlg.h d:\xp\neptune\sdk\inc\compobj.h \
+	d:\xp\neptune\sdk\inc\dde.h d:\xp\neptune\sdk\inc\ddeml.h \
+	d:\xp\neptune\sdk\inc\dlgs.h d:\xp\neptune\sdk\inc\drivinit.h \
+	d:\xp\neptune\sdk\inc\dvobj.h d:\xp\neptune\sdk\inc\initguid.h \
+	d:\xp\neptune\sdk\inc\lzexpand.h d:\xp\neptune\sdk\inc\mmsystem.h \
+	d:\xp\neptune\sdk\inc\moniker.h d:\xp\neptune\sdk\inc\nb30.h \
+	d:\xp\neptune\sdk\inc\ole.h d:\xp\neptune\sdk\inc\ole2.h \
+	d:\xp\neptune\sdk\inc\oleguid.h d:\xp\neptune\sdk\inc\rpc.h \
+	d:\xp\neptune\sdk\inc\rpcdce.h d:\xp\neptune\sdk\inc\rpcdce2.h \
+	d:\xp\neptune\sdk\inc\rpcdcep.h d:\xp\neptune\sdk\inc\rpcferr.h \
+	d:\xp\neptune\sdk\inc\rpcnsi.h d:\xp\neptune\sdk\inc\rpcnterr.h \
+	d:\xp\neptune\sdk\inc\scode.h d:\xp\neptune\sdk\inc\shellapi.h \
+	d:\xp\neptune\sdk\inc\storage.h d:\xp\neptune\sdk\inc\valid.h \
+	d:\xp\neptune\sdk\inc\winbase.h d:\xp\neptune\sdk\inc\wincon.h \
+	d:\xp\neptune\sdk\inc\windef.h d:\xp\neptune\sdk\inc\windows.h \
+	d:\xp\neptune\sdk\inc\winerror.h d:\xp\neptune\sdk\inc\wingdi.h \
+	d:\xp\neptune\sdk\inc\winnetwk.h d:\xp\neptune\sdk\inc\winnls.h \
+	d:\xp\neptune\sdk\inc\winnt.h d:\xp\neptune\sdk\inc\winperf.h \
+	d:\xp\neptune\sdk\inc\winreg.h d:\xp\neptune\sdk\inc\winsock.h \
+	d:\xp\neptune\sdk\inc\winspool.h d:\xp\neptune\sdk\inc\winsvc.h \
+	d:\xp\neptune\sdk\inc\winuser.h d:\xp\neptune\sdk\inc\winver.h
+
+.\$(OBJDIR)\$(NAME).obj :  $(PCHDIR)\$(OBJDIR)\pch.pxh
+.\$(OBJDIR)\tutils.obj :  $(PCHDIR)\$(OBJDIR)\pch.pxh
+.\$(OBJDIR)\tsupp.obj :  $(PCHDIR)\$(OBJDIR)\pch.pxh
+
+!endif # PXXFILE 
+
+ 

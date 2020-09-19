@@ -1,0 +1,56 @@
+!IF 0
+
+Copyright (c) 2000  Microsoft Corporation
+
+Module Name:
+
+    sources.
+
+Abstract:
+
+    This file specifies the target component being built and the list of
+    sources files needed to build that component.  Also specifies optional
+    compiler switches and libraries that are unique for the component being
+    built.
+
+
+Author:
+
+    Steve Wood (stevewo) 12-Apr-2000
+
+
+Revision History:
+
+!ENDIF
+
+TARGETNAME=rpcdce4
+TARGETPATH=\xp\neptune\sdk\lib
+TARGETTYPE=DYNLINK
+
+INCLUDES=..\mtrt
+
+#
+# Setup for application developer to set breakpoints with windbg
+#
+
+XPDEBUGTYPE=coff
+
+SOURCES=comments.c
+
+!ifdef DOSWIN32RPC
+RPCENV=-DDOSWIN32RPC -DWIN32RPC
+!else
+RPCENV=-DNTENV
+!endif
+
+C_DEFINES=$(RPCENV) $(RPCTARGETENV)
+
+TARGETLIBS=
+
+LINKLIBS=$(_NTDRIVE)\xp\neptune\sdk\lib\*\rpcrt4.lib
+
+UMTYPE=console
+UMTEST=dceclnt*midluser*dcesvr
+UMLIBS=\xp\neptune\sdk\lib\*\rpcrt4.lib
+
+

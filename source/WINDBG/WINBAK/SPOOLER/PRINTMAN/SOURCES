@@ -1,0 +1,68 @@
+!IF 0
+
+Copyright (c) 2000  Microsoft Corporation
+
+Module Name:
+
+    sources.
+
+Abstract:
+
+    This file specifies the target component being built and the list of
+    sources files needed to build that component.  Also specifies optional
+    compiler switches and libraries that are unique for the component being
+    built.
+
+
+Author:
+
+    Steve Wood (stevewo) 12-Apr-1990
+
+NOTE:   Commented description of this file is in \xp\bak\bin\sources.tpl
+
+           \xp\neptune\windows\spooler\printman\ntspl.lib
+           \xp\neptune\sdk\lib\*\ntspl.lib
+!ENDIF
+
+MAJORCOMP=windows
+MINORCOMP=printmanager
+
+EXEPROFILEINPUT=yes
+
+TARGETNAME=printman
+TARGETPATH=obj
+TARGETTYPE=LIBRARY
+TARGETLIBS=$(BASEDIR)\neptune\sdk\lib\*\kernel32.lib \
+           $(BASEDIR)\neptune\sdk\lib\*\winspool.lib \
+           $(BASEDIR)\neptune\sdk\lib\*\mpr.lib
+
+INCLUDES=..\inc;..\..\inc;..\..\..\inc;..\..\prsinf
+C_DEFINES=-DUNICODE -D_UNICODE -DSEP_WAITHANDLE
+
+SOURCES=printer.c \
+        arrow.c \
+        dialogs.c \
+        forms.c \
+        util.c \
+        data.c \
+        toolbar.c \
+        registry.c \
+        security.c \
+        threads.c \
+        password.c \
+        reconn.c \
+        setupdlg.c \
+        format.c \
+        res.rc
+
+UMTYPE=windows
+UMAPPL=printman
+UMLIBS=$(BASEDIR)\neptune\sdk\lib\*\winspool.lib \
+       $(BASEDIR)\neptune\sdk\lib\*\comdlg32.lib \
+       $(BASEDIR)\neptune\sdk\lib\*\shell32.lib \
+       $(BASEDIR)\neptune\sdk\lib\*\comctl32.lib \
+       \xp\neptune\windows\prsinf\obj\*\prsinf.lib \
+       $(BASEDIR)\neptune\sdk\lib\*\mpr.lib \
+       $(BASEDIR)\neptune\sdk\lib\*\ntdll.lib \
+       obj\*\printman.lib \
+       obj\*\res.res

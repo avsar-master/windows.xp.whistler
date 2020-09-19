@@ -1,0 +1,32 @@
+MAJORCOMP=opengl
+MINORCOMP=perf
+TARGETNAME=ogpt
+TARGETPATH=obj
+TARGETTYPE=LIBRARY
+
+INCLUDES=\xp\neptune\sdk\inc\gl
+
+NTLEGO=1
+NTPROFILEINPUT=yes
+
+MIPS_OPTIONS=-float -Olimit 2000 -nodwalign
+
+!IFNDEF XPDEBUGTYPE
+XPDEBUGTYPE=coff
+!ENDIF
+
+
+SOURCES=
+
+UMTYPE=console
+UMAPPL=ogpt
+
+
+UMLIBS=\
+       \xp\neptune\sdk\lib\*\gdi32.lib       \
+       \xp\neptune\sdk\lib\*\pwin32.lib      \
+       \xp\neptune\sdk\lib\*\comdlg32.lib    \
+       \xp\neptune\sdk\lib\*\user32.lib      \
+       \xp\neptune\sdk\lib\*\opengl32.lib    \
+       \xp\neptune\sdk\lib\*\glu32.lib       \
+       \xp\neptune\sdk\lib\*\glaux.lib

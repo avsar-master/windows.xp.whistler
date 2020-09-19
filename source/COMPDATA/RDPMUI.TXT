@@ -1,0 +1,1 @@
+Microsoft Windows XP Service Pack 3 Setup has been canceled because XP SP3 cannot be installed over RDP 6.0 MUI PACK (Update for Windows XP (KB925877)). Before you can continue, you must Uninstall KB925877. 

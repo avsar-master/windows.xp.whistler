@@ -1,0 +1,23 @@
+MAJORCOMP=oeminf
+MINORCOMP=oeminf
+
+TARGETNAME=oeminf
+TARGETPATH=obj
+TARGETTYPE=LIBRARY
+
+INCLUDES = ..\inc;..\..\..\inc;..\..\..\utils\fmifs\inc;..\..\shell\lz\libs
+
+SOURCES=\
+        oeminf.c
+
+UMTYPE=windows
+UMAPPL=oeminf
+UMLIBS=obj\*\oeminf.lib                          \
+       $(BASEDIR)\neptune\sdk\lib\*\lz32.lib     \
+       $(BASEDIR)\neptune\sdk\lib\*\winlza.lib   \
+       $(BASEDIR)\neptune\sdk\lib\*\shell32.lib  \
+       $(BASEDIR)\neptune\sdk\lib\*\crtdll.lib  \
+       $(BASEDIR)\neptune\sdk\lib\*\version.lib  \
+       $(BASEDIR)\neptune\sdk\lib\*\imagehlp.lib
+
+UMRES=

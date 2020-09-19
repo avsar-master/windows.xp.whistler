@@ -1,0 +1,144 @@
+!IF 0
+
+Copyright (c) 2000  Microsoft Corporation
+
+Module Name:
+
+    sources.
+
+Abstract:
+
+    This file specifies the target component being built and the list of
+    sources files needed to build that component.  Also specifies optional
+    compiler switches and libraries that are unique for the component being
+    built.
+
+
+Author:
+
+    Steve Wood (stevewo) 12-Apr-1990
+
+NOTE:   Commented description of this file is in \xp\bak\bin\sources.tpl
+
+!ENDIF
+
+
+MAJORCOMP=spc
+MINORCOMP=ntvdm
+
+TARGETNAME=ntvdm
+
+NTLEGO=1
+EXEPROFILEINPUT=yes
+
+INCLUDES=$(BASEDIR)\neptune\mvdm\softpc\host\inc;$(BASEDIR)\neptune\mvdm\softpc\base\inc
+
+!IF $(ALPHA)
+GPSIZE=0
+!ELSE
+GPSIZE=32
+!ENDIF
+
+TARGETPATH=$(BASEDIR)\neptune\sdk\lib
+
+# Pick one of the following and delete the others
+TARGETTYPE=PROGLIB
+
+# this will put coff symbols into all builds
+NTLEANANDMEAN=
+
+#
+# X86 needs LINKLIBS set for the fuzzymatch code in the linker.
+# MIPS and ALPHA need TARGETLIBS set so small.lib (CRTLIBS) will
+# come *after* these libraries but before libc.lib.
+#
+
+!if $(386)
+LINKLIBS = \
+         $(BASEDIR)\neptune\mvdm\softpc\base\support\obj\*\MAIN.obj \
+                 $(BASEDIR)\neptune\mvdm\softpc\host\src\obj\*\FPRT.OBJ \
+                 $(BASEDIR)\neptune\mvdm\softpc\obj.vdm\obj\*\SYSTEM.LIB        \
+                 $(BASEDIR)\neptune\mvdm\softpc\obj.vdm\obj\*\BIOS.LIB  \
+                 $(BASEDIR)\neptune\mvdm\softpc\obj.vdm\obj\*\VIDEO.LIB \
+                 $(BASEDIR)\neptune\mvdm\softpc\obj.vdm\obj\*\DOS.LIB   \
+                 $(BASEDIR)\neptune\mvdm\softpc\obj.vdm\obj\*\COMMS.LIB \
+                 $(BASEDIR)\neptune\mvdm\softpc\obj.vdm\obj\*\DEBUG.LIB \
+                 $(BASEDIR)\neptune\mvdm\softpc\obj.vdm\obj\*\SUPPORT.LIB       \
+                 $(BASEDIR)\neptune\mvdm\softpc\obj.vdm\obj\*\DISKS.LIB \
+                 $(BASEDIR)\neptune\mvdm\softpc\obj.vdm\obj\*\KEYMOUSE.LIB \
+                 $(BASEDIR)\neptune\mvdm\softpc\obj.vdm\obj\*\SRC.LIB   \
+                 $(BASEDIR)\neptune\sdk\lib\*\monitor.lib        \
+                 $(BASEDIR)\neptune\sdk\lib\*\dem.lib    \
+                 $(BASEDIR)\neptune\sdk\lib\*\dbg.lib    \
+                 $(BASEDIR)\neptune\sdk\lib\*\command.lib        \
+                 $(BASEDIR)\neptune\sdk\lib\*\dpmi32.lib \
+                 $(BASEDIR)\neptune\sdk\lib\*\xms.lib    \
+                 $(BASEDIR)\neptune\sdk\lib\*\suballoc.lib    \
+                 $(BASEDIR)\neptune\sdk\lib\*\oemuni.lib \
+                 $(BASEDIR)\neptune\sdk\lib\*\gdi32.lib  \
+                 $(BASEDIR)\neptune\sdk\lib\*\user32p.lib \
+                 $(BASEDIR)\neptune\sdk\lib\*\advapi32.lib \
+                 $(BASEDIR)\neptune\sdk\lib\*\ntdll.lib
+!else
+
+UMLIBS = \
+                $(BASEDIR)\neptune\mvdm\softpc\base\support\obj\*\MAIN.obj \
+                $(BASEDIR)\neptune\mvdm\softpc\host\src\obj\*\FPRT.OBJ     \
+                $(BASEDIR)\neptune\mvdm\softpc\obj.vdm\obj\*\SYSTEM.LIB    \
+                $(BASEDIR)\neptune\mvdm\softpc\obj.vdm\obj\*\BIOS.LIB      \
+                $(BASEDIR)\neptune\mvdm\softpc\obj.vdm\obj\*\VIDEO.LIB     \
+                $(BASEDIR)\neptune\mvdm\softpc\obj.vdm\obj\*\DOS.LIB       \
+                $(BASEDIR)\neptune\mvdm\softpc\obj.vdm\obj\*\COMMS.LIB     \
+                $(BASEDIR)\neptune\mvdm\softpc\obj.vdm\obj\*\DEBUG.LIB     \
+                $(BASEDIR)\neptune\mvdm\softpc\obj.vdm\obj\*\SUPPORT.LIB   \
+                $(BASEDIR)\neptune\mvdm\softpc\obj.vdm\obj\*\DISKS.LIB     \
+                $(BASEDIR)\neptune\mvdm\softpc\obj.vdm\obj\*\KEYMOUSE.LIB  \
+                $(BASEDIR)\neptune\mvdm\softpc\obj.vdm\obj\*\SRC.LIB       \
+                $(BASEDIR)\neptune\mvdm\softpc\*\libs\a3gn$(PD).lib \
+                $(BASEDIR)\neptune\mvdm\softpc\*\libs\avid.lib \
+                $(BASEDIR)\neptune\sdk\lib\*\dbg.lib         \
+                $(BASEDIR)\neptune\sdk\lib\*\dem.lib         \
+                $(BASEDIR)\neptune\sdk\lib\*\xms.lib         \
+                $(BASEDIR)\neptune\sdk\lib\*\suballoc.lib    \
+                $(BASEDIR)\neptune\sdk\lib\*\command.lib  \
+                $(BASEDIR)\neptune\sdk\lib\*\dpmi32.lib   \
+                $(BASEDIR)\neptune\sdk\lib\*\oemuni.lib   \
+                $(BASEDIR)\neptune\sdk\lib\*\binmode.obj  \
+                $(BASEDIR)\neptune\sdk\lib\*\gdi32.lib     \
+                $(BASEDIR)\neptune\sdk\lib\*\user32p.lib   \
+                $(BASEDIR)\neptune\sdk\lib\*\advapi32.lib \
+                $(BASEDIR)\neptune\sdk\lib\*\ntdll.lib
+
+!endif
+
+!if "$(XPDEBUG)" == ""
+PD = pd
+!else
+PD =
+!endif
+
+#
+# Pull these symbols in first.
+#
+
+#LINKER_FLAGS=$(LINKER_FLAGS) -INCLUDE:__mb_cur_max -INCLUDE:_pctype
+
+
+SOURCES=ntvdm.c  \
+        resource.rc
+
+i386_SOURCES=
+MIPS_SOURCES=
+ALPHA_SOURCES=
+
+!INCLUDE CDEFINE.INC
+
+NTTEST=
+
+UMTYPE=console
+UMTEST=
+UMAPPL=
+UMBASE=0x1000000
+
+DLLDEF=obj\*\ntvdm.def
+

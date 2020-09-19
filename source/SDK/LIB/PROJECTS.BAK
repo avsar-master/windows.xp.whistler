@@ -1,0 +1,157 @@
+*** Last updated August 11, 1994 ***
+
+project = adaptec  slm root = //POPCORN/ADAPTEC* nt\neptune\xpos\miniport\adaptec
+project = arcinst  slm root = //ORVILLE/RAZZLE   nt\neptune\xpos\arcinst
+project = base     slm root = //RASTAMAN/NTWIN   nt\neptune\windows\base
+project = bh       slm root = //ROCKYX/BH        nt\neptune\net\bh
+project = cairole  slm root = //SAVIK/CAIRO      nt\neptune\cairole
+project = cairole  slm root = //SAVIK/CAIRO      nt\neptune\ole3
+project = cairousr slm root = //RASTAMAN/NTWIN   nt\neptune\windows\cairousr
+project = cinc     slm root = //ORVILLE/RAZZLE   nt\neptune\cinc
+project = cmd      slm root = //RASTAMAN/NTWIN   nt\neptune\windows\cmd
+project = common   slm root = //SAVIK/WIN40      nt\neptune\common
+project = crt32    slm root = //ORVILLE/RAZZLE   nt\neptune\crt32
+project = crt32    slm root = //ORVILLE/RAZZLE   nt\neptune\crt32dll
+project = crt32    slm root = //ORVILLE/RAZZLE   nt\neptune\crt32nt
+project = crt32    slm root = //ORVILLE/RAZZLE   nt\neptune\crt32psx
+project = crt32    slm root = //ORVILLE/RAZZLE   nt\neptune\crt32st
+project = crtlib   slm root = //ORVILLE/RAZZLE   nt\neptune\crtlib
+project = csetup   slm root = //SAVIK/WIN40      nt\neptune\csetup
+project = decmon   slm root = //POPCORN/DEC      nt\neptune\windows\spooler\monitors\decmon
+project = displays slm root = //RASTAMAN/NTWIN   nt\neptune\windows\gdi\displays
+project = drt      slm root = //SAVIK/WIN40      nt\neptune\drt
+project = dsys     slm root = //SAVIK/WIN40      nt\neptune\dsys
+project = ep       slm root = //RASTAMAN/NTWIN   nt\neptune\windows\ep
+project = eventlog slm root = //ORVILLE/RAZZLE   nt\neptune\eventlog
+project = formspub slm root = //SAVIK/CAIRO      nt\neptune\forms
+project = fp32     slm root = //ORVILLE/RAZZLE   nt\neptune\fp32
+project = fp32     slm root = //ORVILLE/RAZZLE   nt\neptune\fp32dll
+project = fp32     slm root = //ORVILLE/RAZZLE   nt\neptune\fp32nt
+project = fp32     slm root = //ORVILLE/RAZZLE   nt\neptune\fp32st
+project = gdi      slm root = //RASTAMAN/NTWIN   nt\neptune\windows\gdi
+project = halncr2  slm root = //POPCORN/NCR*     nt\neptune\xpos\nthals\halncr
+project = hpmon    slm root = //POPCORN/HP*      nt\neptune\windows\spooler\monitors\hpmon
+project = lnktrack slm root = //SAVIK/WIN40      nt\neptune\lnktrack
+project = mailplus slm root = //KERNEL/RAZZLE2   nt\neptune\mailplus
+project = media    slm root = //RASTAMAN/NTWIN   nt\neptune\windows\media
+project = minimars slm root = //WEENIE/VOL1*     nt\neptune\nw (Netware server)
+project = mvdm     slm root = //KERNEL/RAZZLE3   nt\neptune\mvdm
+project = nbt      slm root = //KERNEL/RAZZLE3   nt\neptune\xpos\nbt
+project = ncrdrive slm root = //POPCORN/NCR*     nt\neptune\xpos\miniport\ncrdrive
+project = net      slm root = //ORVILLE/RAZZLE   nt\neptune\net
+project = netui    slm root = //KERNEL/RAZZLE2   nt\neptune\net\ui
+project = npfddi   slm root = //KERNEL/RAZZLE2*  nt\neptune\xpos\ndis\npfddi
+project = xpos     slm root = //KERNEL/RAZZLE2   nt\neptune\xpos
+project = nwc      slm root = //WEENIE/VOL1      nt\neptune\net\ui\nwc (Netware server)*
+project = ofspub   slm root = //SAVIK/WIN40      nt\neptune\ofs
+project = ole      slm root = //RASTAMAN/NTWIN   nt\neptune\windows\ole
+project = oleutest slm root = //SAVIK/CAIRO      nt\neptune\oleutest
+project = opengl   slm root = //RASTAMAN/NTWIN   nt\neptune\windows\gdi\opengl
+project = os2      slm root = //POPCORN/RAZZLE1  nt\neptune\os2
+project = posix    slm root = //POPCORN/RAZZLE1  nt\neptune\posix
+project = printers slm root = //RASTAMAN/NTWIN   nt\neptune\windows\gdi\printers
+project = private  slm root = //ORVILLE/RAZZLE   nt\private
+project = public   slm root = //ORVILLE/RAZZLE   nt\neptune\public
+project = ras      slm root = //KERNEL/RAZZLE2   nt\neptune\net\ras
+project = rpc      slm root = //KERNEL/RAZZLE3   nt\neptune\rpc
+project = sdktools slm root = //ORVILLE/RAZZLE   nt\neptune\sdktools
+project = setup    slm root = //ORVILLE/RAZZLE   nt\neptune\windows\setup
+project = sfm      slm root = //KERNEL/RAZZLE2   nt\neptune\net\sfm
+project = shell    slm root = //RASTAMAN/NTWIN   nt\neptune\windows\shell
+project = shell    slm root = //SAVIK/WIN40      nt\neptune\cshell
+project = sockets  slm root = //KERNEL/RAZZLE3   nt\neptune\net\sockets
+project = sony     slm root = //POPCORN/SONY*    nt\neptune\xpos\miniport\slcd
+project = spooler  slm root = //RASTAMAN/NTWIN   nt\neptune\windows\spooler
+project = streams  slm root = //KERNEL/RAZZLE3   nt\neptune\xpos\streams
+project = sysmgmt  slm root = //SAVIK/WIN40      nt\neptune\xpos\sysmgmt
+project = testprot slm root = //KERNEL/RAZZLE3   nt\neptune\xpos\ndis\testprot
+project = types    slm root = //ORVILLE/RAZZLE   nt\neptune\types
+project = types2   slm root = //ORVILLE/RAZZLE   nt\neptune\types2
+project = user     slm root = //RASTAMAN/NTWIN   nt\neptune\windows\user
+project = utils    slm root = //ORVILLE/RAZZLE   nt\neptune\utils
+project = vctools  slm root = //ORVILLE/RAZZLE   nt\neptune\sdktools\vctools
+project = wincon   slm root = //RASTAMAN/NTWIN   nt\neptune\windows\wincon
+project = windbg   slm root = //KERNEL/RAZZLE3   nt\neptune\windbg
+project = windows  slm root = //RASTAMAN/NTWIN   nt\neptune\windows
+project = winhelp  slm root = //RASTAMAN/NTWIN   nt\neptune\windows\winhelp
+project = winnls   slm root = //RASTAMAN/NTWIN   nt\neptune\windows\winnls
+
+ÃÄÄÄprivate
+³   ÃÄÄÄcairole
+³   ÃÄÄÄcinc
+³   ÃÄÄÄcommon
+³   ÃÄÄÄcrt32
+³   ÃÄÄÄcrt32dll
+³   ÃÄÄÄcrt32nt
+³   ÃÄÄÄcrt32psx
+³   ÃÄÄÄcrt32st
+³   ÃÄÄÄcrtlib
+³   ÃÄÄÄcsetup
+³   ÃÄÄÄcshell
+³   ÃÄÄÄdrt
+³   ÃÄÄÄdsys
+³   ÃÄÄÄforms
+³   ÃÄÄÄeventlog
+³   ÃÄÄÄfp32
+³   ÃÄÄÄfp32dll
+³   ÃÄÄÄfp32nt
+³   ÃÄÄÄfp32st
+³   ÃÄÄÄlnktrack
+³   ÃÄÄÄmailplus
+³   ÃÄÄÄmvdm
+³   ÃÄÄÄnet
+³   ³	ÃÄÄÄbh
+³   ³	ÃÄÄÄras
+³   ³	ÃÄÄÄsfm
+³   ³	ÃÄÄÄsockets
+³   ³   ÀÄÄÄui
+³   ³       ÀÄÄÄnwc
+³   ÃÄÄÄxpos
+³   ³	ÃÄÄÄarcinst
+³   ³	ÃÄÄÄminiport
+³   ³   ³   ÃÄÄÄadaptec
+³   ³	³   ÃÄÄÄncrdrive
+³   ³	³   ÀÄÄÄslcd
+³   ³	ÃÄÄÄnbt
+³   ³	ÃÄÄÄndis
+³   ³	³   ÃÄÄÄnpfddi
+³   ³	³   ÀÄÄÄtestprot
+³   ³	ÃÄÄÄnthals
+³   ³	³   ÀÄÄÄhalncr
+³   ³	ÀÄÄÄstreams
+³   ÃÄÄÄnw
+³   ÃÄÄÄofs
+³   ÃÄÄÄole3
+³   ÃÄÄÄoleutest
+³   ÃÄÄÄos2
+³   ÃÄÄÄposix
+³   ÃÄÄÄrpc
+³   ÃÄÄÄsdktools
+³   ³	ÀÄÄÄvctools
+³   ÃÄÄÄsysmgmt
+³   ÃÄÄÄtypes
+³   ÃÄÄÄtypes2
+³   ÃÄÄÄutils
+³   ÃÄÄÄwindbg
+³   ÀÄÄÄwindows
+³	ÃÄÄÄbase
+³	ÃÄÄÄcairousr
+³	ÃÄÄÄcmd
+³	ÃÄÄÄep
+³	ÃÄÄÄgdi
+³	³   ÃÄÄÄopengl
+³	³   ÃÄÄÄdisplays
+³	³   ÀÄÄÄprinters
+³	ÃÄÄÄmedia
+³	ÃÄÄÄole
+³	ÃÄÄÄsetup
+³	ÃÄÄÄshell
+³	ÃÄÄÄspooler
+³	³   ÀÄÄÄmonitors
+³	³	ÃÄÄÄdecmon
+³	³	ÀÄÄÄhpmon
+³	ÃÄÄÄuser
+³	ÃÄÄÄwincon
+³	ÃÄÄÄwinhelp
+³	ÀÄÄÄwinnls
+ÀÄÄÄpublic

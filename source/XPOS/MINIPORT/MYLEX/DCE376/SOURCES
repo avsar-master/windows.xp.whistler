@@ -1,0 +1,12 @@
+MAJORCOMP=xpos
+MINORCOMP=miniport
+
+TARGETNAME=dce376nt
+TARGETPATH=$(BASEDIR)\neptune\sdk\lib
+TARGETTYPE=DRIVER
+
+INCLUDES=$(BASEDIR)\neptune\xpos\inc
+
+TARGETLIBS=$(BASEDIR)\neptune\sdk\lib\*\scsiport.lib
+
+SOURCES=dce376nt.c dce376nt.rc

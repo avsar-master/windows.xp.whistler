@@ -1,0 +1,40 @@
+!IF 0
+******************************************************************
+*
+* Description : Sources for WIN32 TextGdi
+*               Copyright (c) 2000 Microsoft Corporation
+*
+* Module Name : TextGdi.EXE
+* 
+* Author      : Kent Diamond (KentD)
+*
+* Revision    : November 21, 2000
+*
+* Comments    : 
+*
+******************************************************************
+!ENDIF
+
+MAJORCOMP=windows
+MINORCOMP=test
+
+TARGETNAME=TextGdi
+TARGETPATH=obj
+TARGETTYPE=LIBRARY
+TARGETLIBS=
+
+INCLUDES=.;..\inc;$(BASEDIR)\neptune\sdk\inc;$(BASEDIR)\neptune\sdk\inc\cl386
+
+SOURCES=TextGdi.c \
+        res.rc
+
+
+UMTYPE=windows
+UMAPPL=TextGdi
+UMENTRY=winmain
+UMLIBS=..\obj\*\perf.lib			\
+       obj\*\res.res				\
+       $(BASEDIR)\neptune\sdk\lib\*\fastimer.lib
+
+C_DEFINES=-DNTWIN
+386_WARNING_LEVEL=-W3

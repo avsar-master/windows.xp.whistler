@@ -1,0 +1,5 @@
+Service Pack 3 Setup has been canceled because Microsoft Shared Computer Toolkit for Windows XP is not compatible with this version of Windows. Before you can continue, you must:
+   1) Uninstall Microsoft Shared Computer Toolkit
+   2) (Optional) Install Windows SteadyState, the newer version of Microsoft Shared Computer Toolkit 
+
+For more detailed information, go to the Shared Access page on the Microsoft Web site.

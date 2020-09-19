@@ -1,0 +1,36 @@
+!IF 0
+
+Copyright (c) 2000  Microsoft Corporation
+
+Module Name:
+
+    dirs.
+
+Abstract:
+
+    This file specifies the subdirectories of the current directory that
+    contain component makefiles.
+
+!ENDIF
+
+DIRS=           bp          \
+                driver      \
+                dumpref     \
+                dumpchk     \
+                heap        \
+                real10      \
+                lib         \
+                osdebug     \
+                dm          \
+                dmkd        \
+                eecxx       \
+                em          \
+                sdktools    \
+                symcvt      \
+                shcv        \
+                tlloc       \
+                remote      \
+                windbg      \
+                win32s
+
+OPTIONAL_DIRS=winbak  \

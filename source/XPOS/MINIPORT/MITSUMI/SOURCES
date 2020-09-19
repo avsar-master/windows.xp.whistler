@@ -1,0 +1,24 @@
+
+
+MAJORCOMP=xpos
+MINORCOMP=miniport
+
+TARGETNAME=mitsumi
+TARGETPATH=\xp\neptune\sdk\lib
+TARGETTYPE=MINIPORT
+
+INCLUDES=..\..\inc
+
+TARGETLIBS=$(BASEDIR)\neptune\sdk\lib\*\scsiport.lib
+
+!IF $(ALPHA)
+TARGETLIBS=$(BASEDIR)\neptune\sdk\lib\*\scsiport.lib $(BASEDIR)\neptune\sdk\lib\*\libcntpr.lib
+!ENDIF
+
+SOURCES=main.c       \
+        common.c     \
+        read.c       \
+        audio.c      \
+        toc.c        \
+        debug.c      \
+        mitsumi.rc

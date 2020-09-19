@@ -1,0 +1,23 @@
+/**********************************************************************/
+/**                       Microsoft Windows/NT                       **/
+/**                Copyright(c) Microsoft Corp., 2000                **/
+/**********************************************************************/
+
+/*
+    bltapp.rc
+    Resources needed by every BLT client
+
+    FILE HISTORY:
+        beng        30-Jul-2000 Separated from blt.rc
+*/
+
+
+#include <bltrc.h>
+#include <bltcons.h>
+
+#ifndef  _BLT_RC_
+#define  _BLT_RC_
+
+#include <data\blt.dat>
+
+#endif

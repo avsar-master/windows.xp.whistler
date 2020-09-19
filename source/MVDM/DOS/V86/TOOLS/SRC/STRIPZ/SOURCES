@@ -1,0 +1,14 @@
+MAJORCOMP=tools
+MINORCOMP=stripz
+
+TARGETNAME=stripz
+TARGETPATH=..\..\bin
+
+INCLUDES=..\inc;\xp\neptune\sdk\inc
+
+SOURCES=stripz.c
+
+BUILDTOOL=1
+TOOL_MODEL=/AS /G2s
+TOOL_LIBS=\xp\neptune\tools\lib\slibcep \xp\neptune\tools\lib\toolsp/NOD
+TOOL_TYPE=WINDOWCOMPAT

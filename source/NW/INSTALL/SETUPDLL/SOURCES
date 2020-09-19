@@ -1,0 +1,47 @@
+!IF 0
+
+Copyright (c) 2000  Microsoft Corporation
+
+Module Name:
+
+    sources.
+
+Abstract:
+
+    This file specifies the target component being built and the list of
+    sources files needed to build that component.  Also specifies optional
+    compiler switches and libraries that are unique for the component being
+    built.
+
+
+Author:
+
+    Steve Wood (stevewo) 12-Apr-2000
+
+!ENDIF
+
+MAJORCOMP=shell
+MINORCOMP=library
+
+INCLUDES=.;..\..\svcdlls\nwwks\inc;..\..\inc
+
+TARGETNAME=nwcfg
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+UMTYPE=windows
+
+TARGETLIBS= $(BASEDIR)\neptune\sdk\lib\*\user32.lib   \
+           $(BASEDIR)\neptune\sdk\lib\*\advapi32.lib \
+           $(BASEDIR)\neptune\sdk\lib\*\kernel32.lib \
+           ..\..\svcdlls\nwwks\lib\obj\*\nwwlib.lib 
+
+DLLBASE=0x67800000
+DLLENTRY=DLLInit
+SOURCES=nwcfg.cxx  \
+        removesz.c \
+        setvalue.c \
+        lodctr.c \
+        unlodctr.c \
+        security.c \
+        dllinit.c \
+        nwcfg.rc

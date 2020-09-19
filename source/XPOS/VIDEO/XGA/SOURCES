@@ -1,0 +1,14 @@
+MAJORCOMP=xpos
+MINORCOMP=video
+
+TARGETNAME=xga
+TARGETPATH=\xp\neptune\sdk\lib
+TARGETTYPE=MINIPORT
+
+TARGETLIBS=\xp\neptune\sdk\lib\*\videoprt.lib
+
+INCLUDES=..\..\inc
+
+SOURCES=
+
+NTTARGETFILE0=xgaloger.h

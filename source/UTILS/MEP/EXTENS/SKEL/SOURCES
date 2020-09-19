@@ -1,0 +1,14 @@
+MAJORCOMP=utils
+MINORCOMP=mep
+
+TARGETNAME=skel
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+TARGETLIBS=\xp\neptune\sdk\lib\*\exthdr.lib
+
+INCLUDES=.;..\..\inc;\xp\neptune\sdktools\ztools\inc
+
+SOURCES= skel.c
+
+C_DEFINES=
+UMTYPE=console

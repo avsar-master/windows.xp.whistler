@@ -1,0 +1,44 @@
+MAJORCOMP=opengl
+MINORCOMP=covglu
+
+TARGETNAME=covglu
+TARGETPATH=.\obj
+TARGETTYPE=PROGRAM
+
+!IFNDEF XPDEBUGTYPE
+XPDEBUGTYPE=coff
+!ENDIF
+
+UMTYPE=console
+
+UMTEST=covglu
+
+INCLUDES=../ctk
+
+C_DEFINES=-DNT -D__STDC__
+
+SOURCES=b.c           \
+        c.c           \
+        d.c           \
+        data.c        \
+        e.c           \
+        enum.c        \
+        g.c           \
+        l.c           \
+        n.c           \
+        o.c           \
+        p.c           \
+        q.c           \
+        s.c           \
+        shell.c       \
+        t.c           \
+        u.c          
+
+
+UMLIBS=..\ctk\obj\*\GLctk.lib               \
+       \xp\neptune\sdk\lib\*\gdi32.lib       \
+       \xp\neptune\sdk\lib\*\opengl32.lib    \
+       \xp\neptune\sdk\lib\*\glu32.lib       \
+       \xp\neptune\sdk\lib\*\pwin32.lib      \
+       \xp\neptune\sdk\lib\*\comdlg32.lib    \
+       \xp\neptune\sdk\lib\*\user32.lib

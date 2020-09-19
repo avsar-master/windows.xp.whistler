@@ -1,0 +1,15 @@
+MAJORCOMP=utils
+MINORCOMP=mep
+
+TARGETNAME=mepparty
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+LINKLIBS=\xp\neptune\sdk\lib\*\exthdr.lib
+TARGETLIBS=\xp\neptune\sdk\lib\*\kernel32.lib \xp\neptune\sdk\lib\*\user32p.lib
+
+INCLUDES=.;..\..\inc;\xp\neptune\sdktools\ztools\inc;\xp\neptune\windows\inc
+
+SOURCES= mepparty.c
+
+C_DEFINES=-D_OS2_20_=0  -DNO_EXT_KEYS -DEXTERNAL= -DEXPORT= -Dpascal= -Dfar= -DNOLANMAN -DNT
+UMTYPE=console

@@ -1,0 +1,27 @@
+INDENTED_DIRECTIVES=1
+
+MAJORCOMP=vdd
+MINORCOMP=vcdex
+
+TARGETNAME=vcdex
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+TARGETLIBS=$(_NTDRIVE)\xp\neptune\sdk\lib\*\kernel32.lib \
+           $(_NTDRIVE)\xp\neptune\sdk\lib\*\user32.lib \
+           $(_NTDRIVE)\xp\neptune\sdk\lib\*\ntvdm.lib \
+           $(_NTDRIVE)\xp\neptune\sdk\lib\*\crtdll.lib
+
+DLLENTRY=VDDInitialize
+DLLBASE=0x2000000
+
+INCLUDES=..\..\..\h
+
+SOURCES=vcdex.c VCDEX.RC
+
+C_DEFINES=-DWIN_32
+
+UMTYPE=windows
+UMTEST=
+UMLIBS=
+UMRES=Obj\*\VCDEX.Res
+

@@ -1,0 +1,22 @@
+MAJORCOMP=
+MINORCOMP=
+
+XPDEBUG=ntsd
+TARGETNAME=delmon
+TARGETPATH=obj
+TARGETTYPE=LIBRARY
+
+
+INCLUDES=$(BASEDIR)\neptune\sdk\inc; \
+
+UMLIBS=..\..\..\bins\obj\*\sfmutil.lib
+
+
+SOURCES=delmon.c
+
+
+#C_DEFINES=
+386_FLAGS= /DUNICODE
+
+UMTYPE=console
+UMAPPL=delmon

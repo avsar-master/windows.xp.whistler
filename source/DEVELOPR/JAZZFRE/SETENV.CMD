@@ -1,0 +1,29 @@
+@echo off
+set _NT_LEGO_ON_THIS_MACHINE=1
+set BINPLACE_FLAGS=-x
+set REBASE_FLAGS=-p
+set ENABLE_OPENGL=1
+set NTCPPFLAGS=-D_IDWBUILD -DRDRDBG -DSRVDBG
+set PATH=%PATH%;%_XPDRIVE%\xp\neptune\mvdm\tools16;%_XPDRIVE%\xp\neptune\tools;c:\bldtools
+set ntvdm_based_build=yes
+set softpc_root=\xp\neptune\mvdm\softpc
+set softpc_dest=\xp\neptune\mvdm\softpc\obj.vdm
+set _STATOPTIONS=qf
+set NT_ROOT=%_XPDRIVE%\nt
+set NTOS_ROOT=%_XPDRIVE%\xp\neptune\xpos
+set NW_ROOT=%_XPDRIVE%\xp\neptune\nw
+set MARS_PCH=1
+set CAIRO=
+set USE_BUILD=1
+set BH_ROOT=%_XPDRIVE%\xp\neptune\net\bh
+set BH_BUILD=%_XPDRIVE%\xp\neptune\net\bh\build
+set BINROOT=\binaries
+set BUILD_MULTIPROCESSOR=1
+set NTDBGFILES=1
+set USE_DAYTONA_OLE=1
+set CI_DAYTONA=1
+set BINDRIVE=%_ntdrive%
+call setproj
+call setbldop
+call %_XPDRIVE%\xp\neptune\developr\%USERNAME%\%USERNAME%
+cls

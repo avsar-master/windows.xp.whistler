@@ -1,0 +1,8 @@
+TARGETNAME=ibmppdsl
+TARGETPATH=$(BASEDIR)\neptune\sdk\lib
+TARGETTYPE=DYNLINK
+
+INCLUDES=..;..\..\inc
+
+SOURCES=code.c   \
+	ibmppdsl.rc

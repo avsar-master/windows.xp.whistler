@@ -1,0 +1,22 @@
+!IF 0
+
+    RAS Device INF File Library wrapper build.
+
+!ENDIF
+
+TARGETNAME=eventlog
+TARGETPATH=obj
+TARGETTYPE=LIBRARY
+TARGETLIBS=$(_NTBINDIR)\neptune\sdk\lib\*\crtdll.lib
+
+INCLUDES=$(_NTBINDIR)\neptune\sdk\inc\crt;$(_NTBINDIR)\neptune\sdk\inc;..\..\..\inc
+
+SOURCES=eventlog.c
+
+C_DEFINES=
+386_FLAGS=
+NTTEST=
+UMTYPE=windows
+UMTEST=
+UMAPPL=
+UMLIBS=

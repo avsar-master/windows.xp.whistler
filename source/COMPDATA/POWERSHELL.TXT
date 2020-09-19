@@ -1,0 +1,1 @@
+Microsoft Windows XP Service Pack 3 Setup has been canceled because XP SP3 cannot be installed over Windows PowerShell (TM) 1.0. Before you can continue, you must Uninstall Windows PowerShell (TM) 1.0. For More information http://support.microsoft.com/kb/926139 

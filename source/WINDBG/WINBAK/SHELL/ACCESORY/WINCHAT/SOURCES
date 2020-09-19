@@ -1,0 +1,57 @@
+!IF 0
+/*---------------------------------------------------------------------------*\
+| APPLICATION BUILD FILE
+|   This module builds the sources for WIN32.
+|
+| FLAGS
+|   -DDEBUG  : enable debug output
+|   -DASSERT : enable assert output
+|
+|
+| created: 29-Dec-92
+| history: 29-Dec-92 <chriswil> created.
+|          19-Oct-93 <chriswil> unicode enabled.
+|
+\*---------------------------------------------------------------------------*/
+!ENDIF
+
+MAJORCOMP=windows
+MINORCOMP=winchat
+
+NTTARGETFILES=copyexe
+
+TARGETNAME=winchat
+TARGETPATH=bin
+TARGETTYPE=LIBRARY
+TARGETLIBS=
+TARGETENTRY=WinMain
+
+C_DEFINES=-DNT -DWIN32 -DDDEMLBUG  -DPROTOCOL_NEGOTIATE -DUNICODE -D_UNICODE
+
+INCLUDES=.;$(BASEDIR)\neptune\sdk\inc;$(APPSROOT)\inc;$(BASEDIR)\neptune\windows\inc;..\..\userpri
+
+
+SOURCES=            \
+        DDE.C       \
+        DIALOGS.C   \
+        WCINIT.C    \
+        WINCHAT.C   \
+        GLOBALS.C   \
+        WINCHAT.rc
+
+
+
+UMTYPE=windows
+UMAPPL=winchat
+UMENTRY=winmain
+UMLIBS=                                          \
+       $(BASEDIR)\neptune\sdk\lib\*\comdlg32.lib  \
+       $(BASEDIR)\neptune\sdk\lib\*\shell32.lib   \
+       $(BASEDIR)\neptune\sdk\lib\*\comctl32.lib  \
+       $(BASEDIR)\neptune\sdk\lib\*\winmm.lib     \
+       $(BASEDIR)\neptune\sdk\lib\*\ntlanman.lib  \
+       $(BASEDIR)\neptune\sdk\lib\*\mpr.lib       \
+       $(BASEDIR)\neptune\sdk\lib\*\nddeapi.lib   \
+       bin\*\winchat.lib                         \
+       obj\*\winchat.res
+

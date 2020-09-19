@@ -1,0 +1,20 @@
+MAJORCOMP=utils
+MINORCOMP=mep
+
+TARGETNAME=exthdr
+TARGETPATH=\xp\neptune\sdk\lib
+TARGETTYPE=LIBRARY
+
+INCLUDES=.;..\..\inc;\xp\neptune\sdktools\ztools\inc
+
+
+SOURCES= exthdr.c
+
+
+C_DEFINES=-DNO_EXT_KEYS -DNOLANMAN -DNT
+UMTYPE=console
+UMTEST=
+UMLIBS=\xp\neptune\sdk\lib\*\exthdr.lib
+
+
+NTTARGETFILE0=\xp\neptune\sdk\inc\ext.h

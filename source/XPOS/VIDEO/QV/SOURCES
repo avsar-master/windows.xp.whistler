@@ -1,0 +1,12 @@
+MAJORCOMP=xpos
+MINORCOMP=video
+
+TARGETNAME=qv
+TARGETPATH=\xp\neptune\sdk\lib
+TARGETTYPE=DRIVER
+
+TARGETLIBS=\xp\neptune\sdk\lib\*\videoprt.lib
+
+INCLUDES=..\..\inc
+
+SOURCES=

@@ -1,0 +1,20 @@
+
+MAJORCOMP=opengl
+MINORCOMP=ctk
+
+TARGETNAME=GLctk
+TARGETPATH=.\obj
+TARGETLIBS=\xp\neptune\sdk\lib\*\kernel32.lib    \
+           \xp\neptune\sdk\lib\*\gdi32.lib
+
+TARGETTYPE=LIBRARY
+
+INCLUDES=../inc;../confshel;../../ctk;../../toolkits/libaux;/nt/public/sdk/inc/gl
+
+XPDEBUGTYPE=both
+XPDEBUG=ntsd
+MSC_OPTIMIZATION=/Od
+
+C_DEFINES=-DNT -D__STDC__
+
+SOURCES=ctkw.c

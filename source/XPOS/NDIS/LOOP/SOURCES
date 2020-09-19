@@ -1,0 +1,22 @@
+MAJORCOMP=xpos
+MINORCOMP=ndis2
+
+TARGETNAME=loop
+TARGETPATH=\xp\neptune\sdk\lib
+TARGETTYPE=DRIVER
+
+TARGETLIBS=$(BASEDIR)\neptune\sdk\lib\*\ndis.lib
+
+INCLUDES=..\..\inc
+
+SOURCES=loop.c \
+	request.c \
+        send.c \
+        loop.rc
+
+RELATIVE_DEPTH=..\..
+
+!IFNDEF 386_WARNING_LEVEL
+386_WARNING_LEVEL=/W3
+!ENDIF
+

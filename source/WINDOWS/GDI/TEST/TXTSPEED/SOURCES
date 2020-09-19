@@ -1,0 +1,40 @@
+!IF 0
+******************************************************************
+*
+* Description : Sources for WIN32 txtspeed
+*               Copyright (c) 2000 Microsoft Corporation
+*
+* Module Name : txtspeed.EXE
+* 
+* Author      : Kent Diamond (KentD)
+*
+* Revision    : September 26, 2000
+*
+* Comments    : 
+*
+******************************************************************
+!ENDIF
+
+
+MAJORCOMP=windows
+
+TARGETNAME=txtspeed
+TARGETPATH=obj
+TARGETTYPE=LIBRARY
+TARGETLIBS=\xp\neptune\sdk\lib\*\winrtl.lib
+           
+
+INCLUDES=.;..\inc;\xp\neptune\sdk\inc;\xp\neptune\sdk\inc\cl386
+SOURCES=
+i386_SOURCES=
+MIPS_SOURCES=
+
+
+UMTYPE=console
+UMAPPL=txtspeed
+UMLIBS=..\obj\*\perf.lib
+
+OPTIONAL_UMTEST=
+C_DEFINES=-DWINVER=40 -DNTWIN
+386_WARNING_LEVEL=-W3
+386_OPTIMIZATION=/Oeglt /Gs

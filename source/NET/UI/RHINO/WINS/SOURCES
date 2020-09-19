@@ -1,0 +1,61 @@
+MAJORCOMP=rhino
+MINORCOMP=wins
+
+TARGETNAME=winsadmn
+TARGETPATH=obj
+TARGETTYPE=LIBRARY
+
+C_DEFINES=$(C_DEFINES) -DSHELLABOUT
+
+PRECOMPILED_INCLUDE=stdafx.h
+PRECOMPILED_CXX=1
+
+INCLUDES=..\common\ipaddr;..\common\ipadrdll;$(VCNTBASE)\include;\xp\neptune\inc
+#
+#  STDAFX.CPP should be first in SOURCES list to build the PCH properly
+#
+SOURCES=\
+    STDAFX.CPP\
+    ABOUTDLG.CPP\
+    ADDSTATI.CPP\
+    ADDWINSS.CPP\
+    CONFIGUR.CPP\
+    CONFIRMD.CPP\
+    CONNECTI.CPP\
+    EDITSTAT.CPP\
+    GETIPADD.CPP\
+    GETNETBI.CPP\
+    LISTBOX.CPP\
+    MAINFRM.CPP\
+    PREFEREN.CPP\
+    PULLPART.CPP\
+    PUSHPART.CPP\
+    REPLICAT.CPP\
+    SETMAPPI.CPP\
+    STATICMA.CPP\
+    STATISTI.CPP\
+    VIEWMAPP.CPP\
+    WINSADOC.CPP\
+    WINSSUP.CPP\
+    SELECTWI.CPP\
+    WINSFILE.CPP\
+    WINSADMN.RC
+
+UMLIBS=obj\*\winsadmn.lib			 \
+       ..\common\ipaddr\obj\*\ipaddr.lib	 \
+       ..\common\ipadrdll\obj\*\ipadrdll.lib	 \
+       ..\common\classes\obj\*\common.lib	 \
+       $(BASEDIR)\neptune\sdk\lib\*\mfc200.lib	 \
+       $(BASEDIR)\neptune\sdk\lib\*\wsock32.lib	 \
+       $(BASEDIR)\neptune\sdk\lib\*\winsrpc.lib	 \
+       $(BASEDIR)\neptune\sdk\lib\*\comdlg32.lib  \
+       $(BASEDIR)\neptune\sdk\lib\*\shell32.lib   \
+       $(BASEDIR)\neptune\sdk\lib\*\user32.lib    \
+       $(BASEDIR)\neptune\sdk\lib\*\kernel32.lib  \
+       $(BASEDIR)\neptune\sdk\lib\*\advapi32.lib  \
+       $(BASEDIR)\neptune\sdk\lib\*\gdi32.lib	 \
+       obj\*\winsadmn.res
+
+UMTYPE=windows
+UMENTRY=winmain
+UMAPPL=winsadmn

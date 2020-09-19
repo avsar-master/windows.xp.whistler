@@ -1,0 +1,17 @@
+/**********************************************************************/
+/**           Microsoft LAN Manager                                  **/
+/**     Copyright(c) Microsoft Corp., 2000                           **/
+/**********************************************************************/
+
+
+    lmomod.ut
+    USER_MODALS subsystem unit tests
+
+
+    FILE HISTORY:
+        SimoP 3-Jul-2000       Created
+
+
+
+See ui\admin\user\test secset.ut 
+=================================

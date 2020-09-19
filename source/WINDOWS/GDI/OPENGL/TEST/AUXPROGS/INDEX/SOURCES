@@ -1,0 +1,29 @@
+MAJORCOMP=petzold
+MINORCOMP=dino
+TARGETNAME=dino
+TARGETPATH=obj
+TARGETTYPE=LIBRARY
+
+#XPDEBUGTYPE=both
+#XPDEBUG=ntsd
+#MSC_OPTIMIZATION=/Od
+
+INCLUDES=\xp\neptune\sdk\inc\gl
+
+SOURCES=
+  
+# C_DEFINES=-DWIN32
+
+UMTYPE=console
+APPL1=antindx*antipndx*fogindex*maplight
+#UMENTRY=winmain
+UMAPPL=$(APPL1)
+
+UMLIBS=\
+       \xp\neptune\sdk\lib\*\gdi32.lib       \
+       \xp\neptune\sdk\lib\*\pwin32.lib      \
+       \xp\neptune\sdk\lib\*\comdlg32.lib    \
+       \xp\neptune\sdk\lib\*\user32.lib      \
+       \xp\neptune\sdk\lib\*\opengl32.lib    \
+       \xp\neptune\sdk\lib\*\glu32.lib       \
+       \xp\neptune\sdk\lib\*\glaux.lib

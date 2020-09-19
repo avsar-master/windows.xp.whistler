@@ -1,0 +1,25 @@
+MAJORCOMP=
+MINORCOMP=
+
+XPDEBUG=ntsd
+#XPDEBUGTYPE=windbg
+TARGETNAME=rasdial
+TARGETPATH=obj
+TARGETTYPE=LIBRARY
+TARGETLIBS=
+
+INCLUDES=$(BASEDIR)\neptune\sdk\inc;..\..\common\src;..\..\..\common\inc;..\xlate
+
+SOURCES=rasdial.c
+
+
+C_DEFINES=
+NTTEST=
+
+UMAPPL=rasdial
+UMTYPE=console
+USE_CRTDLL=1
+UMENTRY=
+UMLIBS=$(BASEDIR)\neptune\sdk\lib\*\rasapi32.lib \
+       ..\xlate\obj\*\rasdial.res \
+       $(BASEDIR)\neptune\sdk\lib\*\user32.lib

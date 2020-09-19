@@ -1,0 +1,57 @@
+#
+#   Create avicap.dll
+#
+
+MAJORCOMP=windows
+MINORCOMP=avi
+
+TARGETNAME=avicap32
+TARGETPATH=..\lib
+TARGETTYPE=DYNLINK
+UMTYPE=windows
+DLLDEF=avicap32.def
+
+
+C_DEFINES=-DWIN32 -DUNICODE -DUSE_AVIFILE
+#C_DEFINES=-DWIN32 -DUNICODE
+
+# Define libs we need and where to find them
+
+TARGETLIBS=$(_NTBINDIR)\neptune\sdk\lib\*\user32.lib   \
+           $(_NTBINDIR)\neptune\sdk\lib\*\kernel32.lib \
+           $(_NTBINDIR)\neptune\sdk\lib\*\gdi32.lib \
+           $(_NTBINDIR)\neptune\sdk\lib\*\winmm.lib \
+           $(_NTBINDIR)\neptune\sdk\lib\*\advapi32.lib \
+           $(_NTBINDIR)\neptune\sdk\lib\*\version.lib \
+           $(_NTBINDIR)\neptune\sdk\lib\*\crtdll.lib  \
+           $(_NTBINDIR)\neptune\sdk\lib\*\uuid.lib    \
+           $(_NTBINDIR)\neptune\windows\media\avi\lib\*\avifil32.lib \
+           $(_NTBINDIR)\neptune\windows\media\avi\lib\*\msvfw32.lib
+
+INCLUDES=$(_NTBINDIR)\neptune\windows\media\avi\inc;..\..\inc
+
+SOURCES=        	\
+        capinit.c       \
+        capavi.c        \
+        capdib.c        \
+        cappal.c        \
+        capdriv.c       \
+        capmisc.c       \
+        capwin.c        \
+        capmci.c        \
+        capframe.c      \
+        capfile.c       \
+        dibmap.c        \
+        iaverage.c      \
+        video.c         \
+        thunk32.c       \
+        avicap.rc
+
+
+
+# Set	\
+
+DLLENTRY=DllInstanceInit
+DLLBASE=0x1c300000
+
+

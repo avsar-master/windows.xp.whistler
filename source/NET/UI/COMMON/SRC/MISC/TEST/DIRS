@@ -1,0 +1,37 @@
+!IF 0
+
+Copyright (c) 2000  Microsoft Corporation
+
+Module Name:
+
+    dirs.
+
+Abstract:
+
+    This file specifies the subdirectories of the current directory that
+    contain component makefiles.
+
+
+Author:
+
+    Steve Wood (stevewo) 17-Apr-1990
+
+
+Revision History:
+
+    Yi-Hsin Sung (Yi-HsinS) 4-Nov-2000
+        Created from template.
+    Ben Goetter (beng) 31-Dec-2000
+        Added one-shot heaps
+    Ben Goetter (beng) 16-Mar-2000
+        Added generic unit test skeleton
+
+!ENDIF
+
+#   TO ADD xbuffer xfsenum xlog( needs support in netapi.dll )
+
+DIRS=skeleton \
+     xassert  \
+     xbuffer  \
+     xtime    \
+     xoneshot

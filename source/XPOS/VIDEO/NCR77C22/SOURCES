@@ -1,0 +1,15 @@
+C_DEFINES = -DNCR=$(NCR) -DNCRDBG=$(NCRDBG)
+ASM_DEFINES = -DNCR=$(NCR) -DNCRDBG=$(NCRDBG)
+
+MAJORCOMP=xpos
+MINORCOMP=video
+
+TARGETNAME=ncr77c22
+TARGETPATH=\xp\neptune\sdk\lib
+TARGETTYPE=MINIPORT
+
+TARGETLIBS=\xp\neptune\sdk\lib\*\videoprt.lib
+
+INCLUDES=..\..\inc
+
+SOURCES=

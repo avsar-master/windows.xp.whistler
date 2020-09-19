@@ -1,0 +1,134 @@
+#
+# If BUILDMSG is not defined, the define it as the empty string to make
+# the conditionals easier to write.
+#
+
+!INCLUDE $(NTMAKEENV)\makefile.plt
+
+SDKINC = $(_XPROOT)\neptune\sdk\inc
+OAKINC = $(_XPROOT)\neptune\oak\inc
+!IFNDEF NTOSINC
+NTOSINC = $(_XPROOT)\neptune\xpos\inc
+!ENDIF
+
+$(SDKINC)\winbase.h : windows\inc\winbase.w
+    cd windows
+    nmake -f makefil0 BUILDMSG=
+    cd ..
+
+.\inc\lsarpc.h : lsa\lsarpc.idl
+    cd lsa
+    nmake -f makefil0 BUILDMSG=
+    cd ..
+
+.\inc\samrpc.h : newsam\samrpc.idl
+    cd newsam
+    nmake -f makefil0 BUILDMSG=
+    cd ..
+
+NETEVENTRC=	$(SDKINC)\netevent.h \
+		eventlog\netevent\netevent.rc \
+		eventlog\netevent\msg00001.bin
+
+NTSTATUSRC=	$(SDKINC)\ntstatus.h \
+		xpos\dll\ntstatus.rc \
+		xpos\dll\msg00001.bin
+
+MSOBJSRC=	$(SDKINC)\msobjs.h \
+		xpos\seaudit\msobjs\msobjs.rc \
+		xpos\seaudit\msobjs\msg00001.bin
+
+MSAUDITERC=	$(SDKINC)\msaudite.h \
+		xpos\seaudit\msaudite\msaudite.rc \
+		xpos\seaudit\msaudite\msg00001.bin
+
+all:	$(NTSTATUSRC)					\
+	$(SDKINC)\winerror.h $(SDKINC)\winbase.h	\
+	$(MSAUDITERC)					\
+	.\inc\lsarpc.h .\inc\samrpc.h			\
+	$(NETEVENTRC)					\
+	$(MSOBJSRC)
+!IF "$(BUILDMSG)" != ""
+	@ech ; $(BUILDMSG) ;
+!ENDIF
+
+clean: cleansrc binplace all
+
+cleansrc:
+    -erase $(SDKINC)\ntstatus.h $(SDKINC)\winbase.h $(SDKINC)\winerror.h \
+           $(SDKINC)\msaudite.h $(SDKINC)\netevent.h $(SDKINC)\msobjs.h
+    -erase .\inc\lsarpc.h .\inc\samrpc.h
+    -erase xpos\dll\msg00001.bin xpos\dll\ntstatus.rc
+
+incs:
+    cd xpos
+    nmake -f makefil0 BUILDMSG=
+    cd ..
+    cd windows
+    nmake -f makefil0 BUILDMSG=
+    cd ..
+
+$(NTSTATUSRC): nls\ntstatus.mc
+    mc -v -r xpos\dll\ -h $(SDKINC)\ -x $(SDKINC)\ nls\ntstatus.mc
+
+$(NETEVENTRC): nls\netevent.mc
+    mc -v -r eventlog\netevent\ -h $(SDKINC)\ -x $(SDKINC)\ nls\netevent.mc
+
+$(SDKINC)\winerror.h : windows\nlsmsg\winerror.mc
+    cd windows
+    nmake -f makefil0 BUILDMSG=
+    cd ..
+
+$(SDKINC)\winbase.h : windows\inc\winbase.w
+    cd windows
+    nmake -f makefil0 BUILDMSG=
+    cd ..
+
+.\inc\lsarpc.h : lsa\lsarpc.idl
+    cd lsa
+    nmake -f makefil0 BUILDMSG=
+    cd ..
+
+.\inc\samrpc.h : newsam\samrpc.idl
+    cd newsam
+    nmake -f makefil0 BUILDMSG=
+    cd ..
+
+$(MSAUDITERC): xpos\seaudit\msaudite\msaudite.mc
+    mc -v -r xpos\seaudit\msaudite\ -h $(SDKINC)\ xpos\seaudit\msaudite\msaudite.mc
+
+$(MSOBJSRC): xpos\seaudit\msobjs\msobjs.mc
+    mc -v -r xpos\seaudit\msobjs\ -h $(SDKINC)\ xpos\seaudit\msobjs\msobjs.mc
+
+binplace:
+    -binplace $(_XPROOT)\neptune\windows\shell\progman\*.grp
+    -binplace $(_XPROOT)\neptune\windows\shell\control\bitmaps\*.bmp
+    -binplace $(_XPROOT)\neptune\windows\winnls\data\*.nls
+    -binplace $(_XPROOT)\neptune\windows\gdi\fonts\*.fot
+    -binplace $(_XPROOT)\neptune\windows\gdi\fonts\*.fon
+    -binplace $(_XPROOT)\neptune\windows\gdi\fonts\*.fnt
+    -binplace $(_XPROOT)\neptune\windows\gdi\fonts\*.ttf
+    -binplace $(_XPROOT)\neptune\windows\gdi\fonts\trmn\obj\$(TARGET_DIRECTORY)\tmsre32.fon
+    -binplace $(_XPROOT)\neptune\windows\win.ini
+    -binplace $(_XPROOT)\neptune\mvdm\bin86\system.ini $(_XPROOT)\neptune\mvdm\bin86\*.nt
+    -binplace $(_XPROOT)\neptune\oak\bin\system
+    -binplace $(_XPROOT)\neptune\oak\bin\default
+    -binplace $(_XPROOT)\neptune\oak\bin\software
+    -binplace $(_XPROOT)\neptune\oak\bin\ntdetect.com
+    -binplace $(_XPROOT)\neptune\oak\bin\registry.ini
+!if exist($(_XPROOT)\neptune\oak\bin\$(TARGET_DIRECTORY)\cmidl.exe)
+    -binplace $(_XPROOT)\neptune\oak\bin\$(TARGET_DIRECTORY)\cmidl.exe
+!endif
+!if exist($(_XPROOT)\neptune\oak\bin\$(TARGET_DIRECTORY)\includes.exe)
+    -binplace $(_XPROOT)\neptune\oak\bin\$(TARGET_DIRECTORY)\includes.exe
+!endif
+!if exist($(_XPROOT)\neptune\oak\bin\$(TARGET_DIRECTORY)\sed.exe)
+    -binplace $(_XPROOT)\neptune\oak\bin\$(TARGET_DIRECTORY)\sed.exe
+!endif
+!if exist($(_XPROOT)\neptune\oak\bin\$(TARGET_DIRECTORY)\mktyplib.exe)
+    -binplace $(_XPROOT)\neptune\oak\bin\$(TARGET_DIRECTORY)\mktyplib.exe
+!endif
+!IF EXIST($(TARGET_DIRECTORY).mak)
+!INCLUDE $(TARGET_DIRECTORY).mak
+!ENDIF
+    -binplace $(_XPROOT)\neptune\sdk\lib\$(TARGET_DIRECTORY)\crtdll.dll

@@ -1,0 +1,18 @@
+MAJORCOMP=xpos
+MINORCOMP=video
+
+TARGETNAME=s3
+TARGETPATH=\xp\neptune\sdk\lib
+TARGETTYPE=MINIPORT
+
+TARGETLIBS=$(BASEDIR)\neptune\sdk\lib\*\videoprt.lib  \
+           $(BASEDIR)\neptune\sdk\lib\*\libcntpr.lib
+
+INCLUDES=..\..\inc
+
+SOURCES=nnclk.c     \
+        s3.c        \
+        s3data.c    \
+        s3.rc
+
+NTTARGETFILE0=s3logerr.h

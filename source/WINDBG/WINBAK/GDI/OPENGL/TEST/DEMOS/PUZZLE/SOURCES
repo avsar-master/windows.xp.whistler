@@ -1,0 +1,27 @@
+
+MAJORCOMP=opengl
+MINORCOMP=puzzle
+
+TARGETNAME=puzzle
+TARGETPATH=.\obj
+
+TARGETTYPE=PROGRAM
+
+INCLUDES=../../../toolkits/libaux
+
+UMTYPE=console
+UMAPPL=puzzle
+
+C_DEFINES=-DNT -D__STDC__
+
+SOURCES=puzzle.c      \
+        trackbal.c   
+
+UMLIBS=\
+       \xp\neptune\sdk\lib\*\gdi32.lib       \
+       \xp\neptune\sdk\lib\*\pwin32.lib      \
+       \xp\neptune\sdk\lib\*\comdlg32.lib    \
+       \xp\neptune\sdk\lib\*\user32.lib      \
+       \xp\neptune\sdk\lib\*\opengl32.lib    \
+       \xp\neptune\sdk\lib\*\glu32.lib       \
+       \xp\neptune\sdk\lib\*\glaux.lib

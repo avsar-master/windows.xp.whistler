@@ -1,0 +1,36 @@
+
+
+/*++
+
+Copyright (c) 2000,1993  Microsoft Corporation
+
+Module Name:
+
+    debug.h
+
+Abstract:
+
+    This module defines some simple macros for determining if we are using
+    the checked or free version of a component.
+
+Author:
+
+    James Bratsanos (v-jimbr)    8-Dec-2000
+
+
+--*/
+
+#include <stdio.h>
+
+#if DBG==1 && DEVL==1
+#define MYPSDEBUG
+#else
+#undef MYPSDEBUG
+#endif
+
+#ifdef MYPSDEBUG
+#define DBGOUT(parm) ( printf parm )
+#else
+#define DBGOUT(parm)
+#endif
+

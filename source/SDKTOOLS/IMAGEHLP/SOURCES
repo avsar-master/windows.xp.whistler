@@ -1,0 +1,56 @@
+!IF 0
+
+Copyright (c) 1993-94  Microsoft Corporation
+
+!ENDIF
+
+MAJORCOMP=sdktools
+MINORCOMP=imagehlp
+
+TARGETNAME=imagehlp
+TARGETPATH=$(BASEDIR)\neptune\sdk\lib
+TARGETTYPE=DYNLINK
+TARGETLIBS=obj\*\imagehlp.res
+
+LINKLIBS=$(BASEDIR)\neptune\sdk\lib\*\libc.lib \
+         $(BASEDIR)\neptune\sdk\lib\*\kernel32.lib
+
+INCLUDES=$(BASEDIR)\neptune\xpos\inc
+
+SOURCES=bindi.c       \
+        checksum.c    \
+        debug.c       \
+        map.c         \
+        rebasei.c     \
+        undecsym.cxx  \
+        walk.c        \
+        walkx86.c     \
+        walkmip.c     \
+        walkalp.c
+
+UMAPPL=bind*binplace*checkfix*dbgdump*imagechk*rebase*smashlck*splitsym*undname*verfix*editsym*stripcv
+
+UMTYPE=console
+UMRES=$(@R).res
+UMLIBS=$(BASEDIR)\neptune\sdk\lib\*\setargv.obj \
+       $(BASEDIR)\neptune\sdk\lib\*\imagehlp.lib \
+       $(BASEDIR)\neptune\sdk\lib\*\libc.lib \
+       $(BASEDIR)\neptune\sdk\lib\*\kernel32.lib \
+       $(BASEDIR)\neptune\sdk\lib\*\ntdll.lib
+
+NTTARGETFILE0=obj\*\bind.res     \
+              obj\*\binplace.res \
+              obj\*\checkfix.res \
+              obj\*\dbgdump.res  \
+              obj\*\editsym.res  \
+              obj\*\imagechk.res \
+              obj\*\imagehlp.res \
+              obj\*\rebase.res   \
+              obj\*\smashlck.res \
+              obj\*\splitsym.res \
+              obj\*\stripcv.res  \
+              obj\*\undname.res  \
+              obj\*\verfix.res
+
+
+C_DEFINES=$(C_DEFINES) -D_PORTABLE_32BIT_CONTEXT

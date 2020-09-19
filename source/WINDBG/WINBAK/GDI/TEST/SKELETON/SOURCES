@@ -1,0 +1,45 @@
+!IF 0
+
+Copyright (c) 2000  Microsoft Corporation
+
+Module Name:
+
+    sources.
+
+Abstract:
+
+    This file specifies the target component being built and the list of
+    sources files needed to build that component.  Also specifies optional
+    compiler switches and libraries that are unique for the component being
+    built.
+
+
+Author:
+
+    Steve Wood (stevewo) 12-Apr-1990
+
+NOTE:   Commented description of this file is in \xp\bak\bin\sources.tpl
+
+//INCLUDES=\xp\neptune\sdk\inc;\xp\neptune\xpos\inc
+
+!ENDIF
+
+MAJORCOMP=windows
+MINORCOMP=test
+
+TARGETNAME=test
+TARGETPATH=obj
+TARGETTYPE=LIBRARY
+TARGETLIBS=
+
+INCLUDES=\xp\neptune\xpos\inc
+
+SOURCES=wndstuff.c \
+        test.c     \
+        wndstuff.rc
+
+UMTYPE=windows
+UMAPPL=test
+UMLIBS=\xp\neptune\sdk\lib\*\user32.lib \
+       \xp\neptune\sdk\lib\*\kernel32.lib \xp\neptune\sdk\lib\*\gdi32.lib \
+       .\obj\*\test.lib .\obj\*\wndstuff.res \xp\neptune\sdk\lib\*\comdlg32.lib

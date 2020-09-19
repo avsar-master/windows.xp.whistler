@@ -1,0 +1,12 @@
+MAJORCOMP=windows
+MINORCOMP=wkdisp
+
+DLLBASE=@$(BASEDIR)\PUBLIC\SDK\LIB\coffbase.txt,DISPLAY
+TARGETNAME=weitekp9
+TARGETPATH=\xp\neptune\sdk\lib
+TARGETTYPE=DYNLINK
+TARGETLIBS=\xp\neptune\sdk\lib\*\winsrv.lib \xp\neptune\sdk\lib\*\kernel32.lib
+
+INCLUDES=..\inc;..\..\inc;..;..\..\..\inc
+
+SOURCES=

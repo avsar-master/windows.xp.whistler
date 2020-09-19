@@ -1,0 +1,66 @@
+!IF 0
+
+Copyright (c) 2000  Microsoft Corporation
+
+Module Name: Recorder.exe
+
+    sources.
+
+Abstract:
+
+    This file specifies the target component being built and the list of
+    sources files needed to build that component.  Also specifies optional
+    compiler switches and libraries that are unique for the component being
+    built.
+
+
+Author:
+
+    Steve Wood (stevewo) 12-Apr-1990
+
+History:
+
+    John Spencer (johnsp) 1/14/91 "modified for recorder"
+
+NOTE:   Commented description of this file is in \xp\bak\bin\sources.tpl
+
+!ENDIF
+
+
+MAJORCOMP=shell
+MINORCOMP=accesory
+
+TARGETNAME=recorder
+TARGETPATH=obj
+TARGETTYPE=LIBRARY
+!if 0
+TARGETLIBS=\xp\neptune\sdk\lib\*\user32.lib \
+	   \xp\neptune\sdk\lib\*\kernel32.lib \xp\neptune\sdk\lib\*\gdi32.lib \
+	   \xp\neptune\sdk\lib\*\pwin32.lib ..\rec_dll\obj\*\recordll.lib
+!else
+TARGETLIBS=
+!endif
+
+
+C_DEFINES=-DNT -DNTPORT -DWIN32
+
+INCLUDES=..\rec_inc;..\..\..\comdlg;..\..\..\library
+
+SOURCES=recorder.c \
+	dlg.c \
+	fileio.c \
+	globals.c \
+	record.c \
+	rinit.c \
+	util.c \
+	utilc.c \
+	rec.rc
+
+UMTYPE=windows
+UMENTRY=winmain
+UMAPPL=recorder
+UMLIBS= \xp\neptune\sdk\lib\*\user32.lib \
+	\xp\neptune\sdk\lib\*\kernel32.lib \xp\neptune\sdk\lib\*\gdi32.lib \
+	\xp\neptune\sdk\lib\*\pwin32.lib \xp\neptune\sdk\lib\*\shell32.lib \
+	\xp\neptune\sdk\lib\*\comdlg32.lib ..\rec_dll\obj\*\recordll.lib \
+	obj\*\recorder.lib obj\*\rec.res

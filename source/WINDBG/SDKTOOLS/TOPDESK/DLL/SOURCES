@@ -1,0 +1,19 @@
+MAJORCOMP=sdktools
+MINORCOMP=tophook
+
+TARGETNAME=tophook
+TARGETPATH=obj
+TARGETTYPE=DYNLINK
+DLLENTRY=LibMain
+DLLBASE=0x78000000
+
+TARGETLIBS=     $(BASEDIR)\neptune\sdk\lib\*\user32.lib    \
+                $(BASEDIR)\neptune\sdk\lib\*\kernel32.lib
+
+INCLUDES=..;$(BASEDIR)\neptune\sdk\inc\port1632
+
+C_DEFINES= -DWIN32
+
+SOURCES=tophook.c
+
+UMTYPE=windows

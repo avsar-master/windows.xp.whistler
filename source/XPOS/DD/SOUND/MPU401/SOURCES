@@ -1,0 +1,14 @@
+TARGETNAME=mpu401
+TARGETPATH=obj
+TARGETTYPE=DRIVER
+
+TARGETLIBS=..\soundlib\obj\*\soundlib.lib
+
+INCLUDES=..\soundlib\inc;$(BASEDIR)\neptune\inc;$(BASEDIR)\neptune\xpos\inc
+
+SOURCES=isr.c           \
+        devcaps.c       \
+        init.c          \
+        config.c        \
+        hardware.c      \
+        midi.c

@@ -1,0 +1,26 @@
+#
+#   Create an MCI handler DLL
+#
+
+MAJORCOMP=windows
+MINORCOMP=avi
+
+TARGETNAME=compman
+TARGETPATH=..\lib
+TARGETTYPE=LIBRARY
+UMTYPE=windows
+
+C_DEFINES=-DWIN32 -DUNICODE -DINC_OLE2 -DDEBUGLOAD
+
+# Define libs we need and where to find them
+
+TARGETLIBS=$(_NTBINDIR)\neptune\sdk\lib\*\user32.lib   \
+           $(_NTBINDIR)\neptune\sdk\lib\*\libc.lib     \
+           $(_NTBINDIR)\neptune\sdk\lib\*\kernel32.lib \
+           $(_NTBINDIR)\neptune\sdk\lib\*\gdi32.lib    \
+           $(_NTBINDIR)\neptune\sdk\lib\*\winmm.lib
+
+INCLUDES=..\inc;..\..\inc
+
+SOURCES= compman.c \
+         icm.c	

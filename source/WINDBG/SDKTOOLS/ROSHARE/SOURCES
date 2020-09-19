@@ -1,0 +1,13 @@
+MAJORCOMP=sdktools
+MINORCOMP=roshare
+
+TARGETNAME=roshare
+TARGETPATH=obj
+TARGETTYPE=UMAPPL_NOLIB
+
+SOURCES=
+
+UMTYPE=console
+UMAPPL=roshare
+UMLIBS=\xp\neptune\sdk\lib\*\netapi32.lib \
+       $(BASEDIR)\neptune\sdk\lib\*\ntdll.lib

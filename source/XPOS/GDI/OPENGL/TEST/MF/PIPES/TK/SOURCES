@@ -1,0 +1,30 @@
+MAJORCOMP=opengl
+MINORCOMP=tpipes
+TARGETNAME=tpipes
+TARGETPATH=obj
+TARGETTYPE=PROGRAM
+
+XPDEBUGTYPE=both
+XPDEBUG=ntsd
+
+INCLUDES=..\inc;\xp\neptune\windows\gdi\opengl\toolkits\libaux;\xp\neptune\sdk\inc\gl
+
+SOURCES= tkmain.c 
+  
+# C_DEFINES=-DWIN32
+
+UMTYPE=console
+#UMAPPL=tpipes
+UMTEST=tpipes
+#UMENTRY=winmain
+
+
+UMLIBS=\
+       ..\generic\obj\*\pipes.lib	    \
+       \xp\neptune\sdk\lib\*\gdi32.lib       \
+       \xp\neptune\sdk\lib\*\pwin32.lib      \
+       \xp\neptune\sdk\lib\*\comdlg32.lib    \
+       \xp\neptune\sdk\lib\*\user32.lib      \
+       \xp\neptune\sdk\lib\*\opengl32.lib    \
+       \xp\neptune\sdk\lib\*\glu32.lib         \
+       \xp\neptune\sdk\lib\*\glaux.lib
